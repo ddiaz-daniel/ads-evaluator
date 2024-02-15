@@ -6,6 +6,15 @@
         "french": "Französisch",
         "portuguese": "Portugiesisch",
         "italian": "Italienisch",
-        "german": "Deutsch"
+        "german": "Deutsch",
+        "continue": "Weiter"
+    },
+    "introduction": {
+        "title": "Kurze Einführung",
+        "who": "Mein Name ist..",
+        "why": "Du bist hier weil..",
+        "what": "Ich suche nach..",
+        "time": "Dieser Fragebogen wird etwa 2-3 Minuten dauern, um abzuschließen",
+        "continue": "Weiter"
     }
 }

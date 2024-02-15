@@ -1,0 +1,20 @@
+{
+    "select_language": {
+        "question": "Sélectionnez votre langue préférée",
+        "english": "Anglais",
+        "spanish": "Espagnol",
+        "french": "Français",
+        "portuguese": "Portugais",
+        "italian": "Italien",
+        "german": "Allemand",
+        "continue": "Continuer"
+    },
+    "introduction": {
+        "title": "Brève Introduction",
+        "who": "Mon nom est..",
+        "why": "Vous êtes ici parce que..",
+        "what": "Je recherche..",
+        "time": "Ce questionnaire prendra environ 2-3 minutes pour être complété",
+        "continue": "Continuer"
+    }
+}

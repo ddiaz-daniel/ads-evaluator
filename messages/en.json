@@ -6,6 +6,15 @@
         "french": "French",
         "portuguese": "Portuguese",
         "italian": "Italian",
-        "german": "German"
+        "german": "German",
+        "continue": "Continue"
+    },
+    "introduction": {
+        "title": "Quick Introduction",
+        "who": "My name is..",
+        "why": "You are here because..",
+        "what": "I am looking for..",
+        "time": "This questionnaire will take about 2-3 minutes to complete",
+        "continue": "Continue"
     }
 }
