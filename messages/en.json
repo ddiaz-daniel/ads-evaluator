@@ -1,0 +1,11 @@
+{
+    "select_language": {
+        "question": "Select your prefered language",
+        "english": "English",
+        "spanish": "Spanish",
+        "french": "French",
+        "portuguese": "Portuguese",
+        "italian": "Italian",
+        "german": "German"
+    }
+}
