@@ -1,18 +1,10 @@
 import SwitchLanguage from '@/app/components/UI/LanguageSelector';
-import { LocaleType } from '@/app/types/types';
 import { useTranslations } from 'next-intl';
-import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
 export default function Intro() {
     const t = useTranslations('introduction');
 
-    const asyncLocale = async () => {
-        "use server";
-        const locale = await getLocale() as LocaleType;
-        return locale;
-    };
     return (
         <section className="h-screen w-full justify-center bg-primary relative">
             <div className='absolute right-0'>
