@@ -3,6 +3,8 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import { usePathname, useRouter } from '@/app/utils/navigation/navigation';
+import { useQuestionnaire } from '@/app/context/QuestionnaireContext';
+import { getLocale } from 'next-intl/server';
 
 type SelectLanguagePageProps = {
     intl: {

@@ -11,10 +11,9 @@
     },
     "introduction": {
         "title": "Kurze Einführung",
-        "who": "Mein Name ist..",
-        "why": "Du bist hier weil..",
-        "what": "Ich suche nach..",
-        "time": "Dieser Fragebogen wird etwa 2-3 Minuten dauern, um abzuschließen",
+        "first_paragraph": "Dieser Fragebogen wird Ihnen helfen, die Qualität der Gesundheitsversorgung in Ihrer Gemeinde zu bewerten.",
+        "second_paragraph": "Ihre Antworten sind anonym und werden vertraulich behandelt.",
+        "thesis": "Ihre Meinung ist wichtig. Vielen Dank für Ihre Teilnahme.",
         "continue": "Weiter"
     }
 }

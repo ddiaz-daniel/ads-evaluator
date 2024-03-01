@@ -11,10 +11,9 @@
     },
     "introduction": {
         "title": "Quick Introduction",
-        "who": "My name is..",
-        "why": "You are here because..",
-        "what": "I am looking for..",
-        "time": "This questionnaire will take about 2-3 minutes to complete",
+        "first_paragraph": "I'am excited to invite you to participate in my master's thesis research. Your insights are incredibly valuable and will help shape the future of",
+        "thesis": "AI understanding of customers in marketing.",
+        "second_paragraph": "In just 2 minutes, you'll have the opportunity to share your thoughts and experiences through a brief questionnaire. Your responses will be kept strictly confidential and used solely for academic purposes.",
         "continue": "Continue"
     }
 }
