@@ -1,4 +1,4 @@
-import SelectLanguagePage from '@/app/components/SelectLangauge/SelectLanguagePage';
+import SelectLanguagePage from '@/app/components/SelectLanguage/SelectLanguagePage';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
