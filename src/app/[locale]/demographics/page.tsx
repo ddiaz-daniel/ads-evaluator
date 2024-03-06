@@ -13,19 +13,13 @@ export default function Demographics() {
                 <SwitchLanguage />
             </div>
 
-            <div className="px-8 pt-16">
-                <h1 className="mb-8 text-center text-2xl font-bold text-white">
-                    {t('demographics')}
-                </h1>
+            <div className="px-8 h-screen">
+
                 <NextIntlClientProvider messages={messages}>
                     <DemographicsForm />
                 </NextIntlClientProvider>
             </div>
-            <div className="flex justify-center absolute bottom-8 w-full">
-                <Link href="/demographics" className='p-3 bg-secondary rounded w-full text-center mx-8'>
-                    {t('continue')}
-                </Link>
-            </div>
+
         </section>
     );
 }

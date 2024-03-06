@@ -15,6 +15,11 @@ export type OccupationsInfo = {
     name: string;
 };
 
+export type HobbiesInfo = {
+    code: string;
+    name: string;
+};
+
 export enum GenderOptions {
     male = "male",
     female = "female",

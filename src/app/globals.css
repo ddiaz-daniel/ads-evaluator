@@ -28,15 +28,3 @@ body {
     text-wrap: balance;
   }
 }
-
-.css-ueukts-MuiButtonBase-root-MuiToggleButton-root.Mui-selected:hover {
-  background-color: #544cc9;
-  border-left-color: white;
-  color: white
-}
-
-.css-ueukts-MuiButtonBase-root-MuiToggleButton-root.Mui-selected {
-  background-color: #544cc9;
-  border-left-color: white;
-  color: white
-}

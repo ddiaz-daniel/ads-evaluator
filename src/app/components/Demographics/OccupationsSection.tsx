@@ -2,7 +2,6 @@ import { useQuestionnaire } from "@/app/context/QuestionnaireContext";
 import { useTranslations } from "next-intl";
 import { useState, useEffect, Suspense } from "react";
 import { Autocomplete, Box, TextField } from "@mui/material";
-import Image from "next/image";
 import { OccupationsInfo } from "@/app/types/types";
 import { generateOccupationsInfo } from "@/app/types/occupations";
 
@@ -33,7 +32,7 @@ const OccupationsSection = () => {
     return (
         <Suspense fallback="Loading...">
             <Autocomplete
-                id='country-select-demo'
+                id='occupation-select-demo'
                 className='m-0 p-0 b-0 w-full rounded'
                 options={listOfOccupations}
                 autoHighlight
