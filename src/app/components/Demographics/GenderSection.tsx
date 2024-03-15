@@ -40,14 +40,14 @@ const GenderSection: React.FC = () => {
             >
                 <Grid container spacing={1}>
                     {Object.values(GenderOptions).map((genderOption) => (
-                        <Grid item xs={6} sm={3} key={genderOption}>
+                        <Grid item xs={false} sm={6} key={genderOption} sx={{ width: "50%" }}>
                             <ToggleButton
                                 value={genderOption}
                                 sx={{
                                     border: 1, borderColor: 'white',
                                     color: 'white', textTransform: "capitalize",
                                     flex: 1, flexDirection: "column",
-                                    width: "10rem", height: "10rem",
+                                    width: "100%", height: "8rem", justifySelf: "center",
                                 }}
                             >
                                 {/* Render icon inside the button based on gender */}

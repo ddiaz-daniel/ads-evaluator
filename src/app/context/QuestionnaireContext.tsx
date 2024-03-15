@@ -14,12 +14,14 @@ type ContextProps = {
     setAgeRange: (ageRange: string) => void;
     gender: string;
     setGender: (gender: string) => void;
-    country: string | undefined;
+    country: string;
     setCountry: (country: string) => void;
-    occupation: string | undefined;
+    occupation: string;
     setOccupation: (occupation: string) => void;
-    hobbies: string[] | undefined;
+    hobbies: string[];
     setHobbies: (hobbies: string[]) => void;
+    id: string;
+    setId: (id: string) => void;
 };
 
 const QuestionnaireContext = createContext<ContextProps | undefined>(undefined);
@@ -38,12 +40,12 @@ interface Props {
 
 const QuestionnaireProvider = ({ children }: Props) => {
     const [questionnaireData, setQuestionnaireData] = useState<QuestionnaireData[]>([]);
-    //const [demographicsData, setDemographicsData] = useState<DemographicsData>();
     const [ageRange, setAgeRange] = useState<string>("0-18");
     const [gender, setGender] = useState<string>("male");
-    const [country, setCountry] = useState<string>();
-    const [occupation, setOccupation] = useState<string>();
-    const [hobbies, setHobbies] = useState<string[]>();
+    const [country, setCountry] = useState<string>("");
+    const [occupation, setOccupation] = useState<string>("");
+    const [hobbies, setHobbies] = useState<string[]>([]);
+    const [id, setId] = useState<string>("");
 
     const changeLanguage = (language: string) => {
         //save in lcoal storage
@@ -87,7 +89,8 @@ const QuestionnaireProvider = ({ children }: Props) => {
         setOccupation,
         hobbies,
         setHobbies,
-
+        id,
+        setId,
     };
 
     return (

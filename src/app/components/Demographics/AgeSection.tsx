@@ -40,7 +40,7 @@ const AgeSection: React.FC = () => {
             >
                 <Grid container spacing={1} >
                     {Object.values(AgeRange).map((ageRangeOption) => (
-                        <Grid item xs={12} sm={3} key={ageRangeOption}>
+                        <Grid item xs={12} sm={12} key={ageRangeOption}>
                             <ToggleButton
                                 value={ageRangeOption}
 
@@ -51,7 +51,6 @@ const AgeSection: React.FC = () => {
                                     height: "5rem", width: "100%",
                                 }}
                             >
-                                {/* Render the age range label inside the button */}
                                 {(ageRangeOption)}
                             </ToggleButton>
                         </Grid>

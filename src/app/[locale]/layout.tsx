@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './../globals.css';
 import { QuestionnaireProvider } from '../context/QuestionnaireContext';
+import FirebaseInit from './fireBaseInit';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,9 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={locale}>
-      <QuestionnaireProvider>
-        <body className={inter.className}>{children}</body>
-      </QuestionnaireProvider>
+      <FirebaseInit>
+        <QuestionnaireProvider>
+          <body className={inter.className}>{children}</body>
+        </QuestionnaireProvider>
+      </FirebaseInit>
     </html>
   );
 }

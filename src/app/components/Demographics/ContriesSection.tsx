@@ -12,11 +12,16 @@ interface OptionProps extends React.HTMLAttributes<HTMLLIElement> {
 
 const CountriesSection = () => {
     const t = useTranslations('demographics');
-    const { getLanguage, setCountry } = useQuestionnaire();
+    const { getLanguage, setCountry, country } = useQuestionnaire();
     const [listOfCountries, setListOfCountries] = useState<CountryInfo[]>([]);
 
     const handleCountryChange = (newValue: CountryInfo) => {
-        setCountry(newValue.code);
+        if (newValue) {
+            setCountry(newValue.code);
+        }
+        else {
+            setCountry('');
+        }
     };
 
     useEffect(() => {
@@ -26,9 +31,10 @@ const CountriesSection = () => {
             setListOfCountries(listOfCountries);
         };
         getListOfCountries();
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+
 
     return (
         <Suspense fallback="Loading...">

@@ -1,72 +1,77 @@
-import { useQuestionnaire } from "@/app/context/QuestionnaireContext";
-import { generateOccupationsInfo } from "@/app/types/occupations";
-import { HobbiesInfo } from "@/app/types/types";
-import { Autocomplete, Box, TextField } from "@mui/material";
-import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useQuestionnaire } from '@/app/context/QuestionnaireContext';
+import { generateHobbiesInfo } from '@/app/types/hobbies';
+import { HobbiesInfo } from '@/app/types/types';
+import { Grid, IconButton } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import ToggleButton from '@mui/material/ToggleButton';
+import { useState, useEffect } from 'react';
 
-interface OptionProps extends React.HTMLAttributes<HTMLLIElement> {
-    key?: string;
-}
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: "#544cc9",
+        },
+    },
+});
 
-const HobbiesSection = () => {
-    const t = useTranslations('hobbies');
+const HobbiesSection: React.FC = () => {
     const { getLanguage, setHobbies } = useQuestionnaire();
-    const [listOfOccupations, setListOfOccupations] = useState<HobbiesInfo[]>([]);
-
-    const handleHobbiesChange = (newValue: HobbiesInfo) => {
-        console.log(newValue);
-        //setHobbies(newValue.code);
-    };
+    const [listOfHobbies, setListOfHobbies] = useState<HobbiesInfo[]>([]);
+    const [selectedHobbies, setSelectedHobbies] = useState<string[]>([]);
 
     useEffect(() => {
-        const getListOfOccupations = async () => {
+        const getListOfHobbies = async () => {
             const language = await getLanguage();
-            const listOfOccupations = await generateOccupationsInfo(language);
-            setListOfOccupations(listOfOccupations);
+            const hobbies = await generateHobbiesInfo(language);
+            setListOfHobbies(hobbies);
         };
-        getListOfOccupations();
-
+        getListOfHobbies();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    const handleHobbyToggle = (hobbyCode: string) => {
+        setSelectedHobbies(prevSelected => {
+            if (prevSelected.includes(hobbyCode)) {
+                return prevSelected.filter(code => code !== hobbyCode);
+            } else {
+                return [...prevSelected, hobbyCode];
+            }
+        });
+    };
+
+    useEffect(() => {
+        setHobbies(selectedHobbies);
+    }, [selectedHobbies, setHobbies]);
+
     return (
-        <Autocomplete
-            id='occupation-select-demo'
-            className='m-0 p-0 b-0 w-full rounded'
-            options={listOfOccupations}
-            autoHighlight
-            getOptionLabel={option => option.name}
-            onChange={(event, newValue) => handleHobbiesChange(newValue as HobbiesInfo)}
-            renderOption={(props, option) => {
-                const { key, ...rest } = props as OptionProps;
-                return (
-                    <Box
-                        key={'key-' + option.code}
-                        component='li'
-                        sx={{ '& > img': { mr: 2, flexShrink: 0 } }}
-                        {...rest}
-                        value={option.code}
-                    >
-                        {option.name}
-                    </Box>
-
-                );
-            }}
-            renderInput={params => (
-                <TextField
-                    className='m-0 mb-1 mt-0 bg-white w-full rounded'
-                    {...params}
-                    variant='outlined'
-                    margin='normal'
-                    inputProps={{
-                        ...params.inputProps,
-                        autoComplete: 'new-password',
-                    }}
-
-                />
-            )}
-        />
+        <ThemeProvider theme={theme}>
+            <Grid container spacing={1}>
+                {listOfHobbies.map(hobby => (
+                    <Grid item xs={false} sm={false} key={hobby.code}>
+                        <ToggleButton
+                            value={hobby.code}
+                            onClick={() => handleHobbyToggle(hobby.code)}
+                            selected={selectedHobbies.includes(hobby.code)}
+                            color='primary'
+                            sx={{
+                                border: 1,
+                                borderColor: 'white',
+                                color: 'white',
+                                textTransform: 'capitalize',
+                                flex: 1,
+                                flexDirection: 'column',
+                                width: '100%',
+                                height: '2.5rem',
+                                justifySelf: 'center',
+                            }}
+                        >
+                            {hobby.name}
+                        </ToggleButton>
+                    </Grid>
+                ))}
+            </Grid>
+        </ThemeProvider>
     );
 };
+
 export default HobbiesSection;
