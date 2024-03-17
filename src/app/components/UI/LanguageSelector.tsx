@@ -6,9 +6,9 @@ export default function LocaleSwitcher() {
   const locale = useLocale();
 
   return (
-    <LocaleSwitcherSelect defaultValue={locale} >
+    <LocaleSwitcherSelect defaultValue={locale}>
       {locales.map((lang) => (
-        <option key={lang} value={lang} className=''>
+        <option key={lang} value={lang} className="">
           {lang}
         </option>
       ))}

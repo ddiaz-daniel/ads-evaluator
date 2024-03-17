@@ -16,7 +16,7 @@ export default function RootLayout({
   params: { locale },
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string; };
+  params: { locale: string };
 }>) {
   return (
     <html lang={locale}>
