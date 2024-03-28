@@ -2,14 +2,26 @@ import { BiMessageRounded } from 'react-icons/bi';
 import { FiHeart, FiSend } from 'react-icons/fi';
 import { IoIosArrowForward } from 'react-icons/io';
 import Image from 'next/image';
-import { AdComponents } from '@/app/types/types';
+import { RealSetup } from '@/app/types/types';
+import React from 'react';
 
-type DisplayAdProps = {
-  setup: AdComponents;
+type DisplayRealAdProps = {
+  setup: RealSetup;
   images: string;
+  locale: "en" | "fr" | "de" | "es" | "pt" | "it";
 };
 
-const DisplayAd = ({ setup, images }: DisplayAdProps) => {
+const DisplayRealAd = ({ setup, images, locale }: DisplayRealAdProps) => {
+
+  console.log(setup);
+  console.log(images);
+  console.log(locale);
+  if (!setup.description[locale]) {
+    return null;
+  }
+  const splitDescription = setup.description[locale].split('\n');
+
+
   return (
     <div className="relative h-full w-full max-w-full">
       <div className="relative mx-auto h-full max-w-md">
@@ -31,32 +43,29 @@ const DisplayAd = ({ setup, images }: DisplayAdProps) => {
                 )}
 
                 {/* Text */}
-                {setup.text.map((text, text_index) => (
+                {setup.labels.map((text, text_index) => (
                   <p
                     key={text_index}
                     className="absolute h-fit w-fit"
                     style={{
-                      top: `${text.position.y * (320 / 1080)}px`,
-                      left: `${text.position.x * (300 / 1080)}px`,
-                      fontSize: `${text.fontSize * 0.8}px`,
-                      color: `${text.color}`,
-                      fontFamily: `${text.font}`,
-                      textAlign: text.align as 'center' | 'left' | 'right' | 'justify',
-                      fontStyle: `${text.style}`,
-                      fontWeight: `${text.weight}`,
-                      letterSpacing: `${text.letterSpacing}px`,
-                      lineHeight: `${text.lineHeight * (1080 / 320)}px`,
-                      backgroundColor: `${text.background_color}${Math.round(
-                        text.background_opacity * 255
-                      )
-                        .toString(16)
-                        .padStart(2, '0')}`,
+                      top: `${text.position.y}px`,
+                      left: `${text.position.x}px`,
+                      fontSize: `${text.fontSize}px`,
+                      color: `white`,
+                      fontFamily: `arial, sans-serif`,
+                      textAlign: 'center',
+                      fontStyle: `normal`,
+                      fontWeight: `${text.fontWeight}`,
+                      letterSpacing: `normal`,
+                      lineHeight: `normal`,
+                      backgroundColor: `transparent`,
                       opacity: 1,
                       zIndex: 20,
-                      width: `${text.width ? text.width : 320}px`,
+                      width: `320px`,
+                      padding: `0px 2px`,
                     }}
                   >
-                    {text.content}
+                    {text.text[locale]}
                   </p>
                 ))}
               </div>
@@ -64,7 +73,7 @@ const DisplayAd = ({ setup, images }: DisplayAdProps) => {
             <div
               className="flex h-10 w-[300px] flex-row items-center justify-between bg-black text-sm font-semibold border-b-[1px] border-gray-500/80"
             >
-              {setup.footer?.content}
+              {setup.footer[locale]}
               <IoIosArrowForward size={22} />
             </div>
             <div className="flex h-10 w-[320px] flex-row justify-between bg-black px-3 py-3">
@@ -77,12 +86,16 @@ const DisplayAd = ({ setup, images }: DisplayAdProps) => {
             <div className="flex h-5 w-[320px] flex-row justify-between bg-black px-3 pt-1 text-sm text-white">
               {`100 likes`}
             </div>
-            <div className="flex h-36 w-[320px] flex-row bg-black pb-1 pt-1">
-              <label className="line-clamp-7 px-3 text-start text-sm text-white">
+            <div className="flex min-h-36 w-[320px] flex-row bg-black pt-1">
+              <label className="line-clamp-7 pl-2 pr-1 text-start text-sm font-light text-white">
                 <span className="font-semibold text-transparent">
                   {'HelloThere'}{' '}
                 </span>
-                {`${setup.post_caption}`}
+                {splitDescription.map((line, index) => (
+                  <span key={index}>{line}
+                    <br /></span>
+                ))
+                }
               </label>
             </div>
           </section>
@@ -92,4 +105,4 @@ const DisplayAd = ({ setup, images }: DisplayAdProps) => {
   );
 };
 
-export default DisplayAd;
+export default DisplayRealAd;

@@ -1,49 +1,72 @@
 'use client';
-import { getAllGeneratedAds } from '@/app/utils/firebase/funtions';
+import { getAllGeneratedAds, getLocalAds } from '@/app/utils/firebase/functions';
 import { useEffect, useState } from 'react';
 
 import { CircularProgress } from '@mui/material';
 import DisplayAd from './DisplayAd';
-import { Ad, AdComponents } from '@/app/types/types';
+import { Ad, AdComponents, RealAd } from '@/app/types/types';
+import DisplayRealAd from './DisplayRealAd';
+
+type CustomAd = {
+  id: string;
+  image: string;
+  setup: AdComponents;
+  origin: "ai";
+};
 
 const AiOrRealComponent = () => {
-  const [ads, setAds] = useState<Ad[]>([]);
-  const [page, setPage] = useState(0);
-  const [setups, setSetups] = useState<AdComponents[]>([]);
-  const [images, setImages] = useState<string[]>([]);
+  const [aiAds, setAiAds] = useState<Ad[]>([]);
+  const [realAds, setRealAds] = useState<RealAd[]>([]);
+  const [customAds, setCustomAds] = useState<CustomAd[]>([]);
+  const [allAds, setAllAds] = useState<(RealAd | CustomAd)[]>([]);
+  const [page, setPage] = useState(5);
+  const [locale, setLocale] = useState<('en' | 'fr' | 'de' | 'es' | 'pt' | 'it')>('en');
 
   const handleFakeClick = () => {
-    const id = ads[page].id;
+    const id = allAds[page].id;
     console.log(id);
     setPage(page + 1);
   };
 
   const handleAiClick = () => {
-    const id = ads[page].id;
+    const id = allAds[page].id;
     console.log(id);
     setPage(page + 1);
   };
 
   useEffect(() => {
     const getAds = async () => {
-      const ads = await getAllGeneratedAds();
-      setAds(ads);
+      /*const ads: Ad[] = await getAllGeneratedAds();
+      setAiAds(ads);*/
+
+      const realAds: RealAd[] = await getLocalAds();
+      const locale = await localStorage.getItem('language') as 'en' | 'fr' | 'de' | 'es' | 'pt' | 'it';
+      setLocale(locale);
+      setRealAds(realAds);
     };
     getAds();
   }, []);
 
   useEffect(() => {
-    let listOfSetups: AdComponents[] = [];
-    let listOfImages: string[] = [];
-    ads.map((ad) => {
-      listOfSetups.push(ad.setup.ads[0].data);
-      listOfImages.push(ad.images[0]);
-    });
-    setSetups(listOfSetups);
-    setImages(listOfImages);
-  }, [ads]);
 
-  if (!ads || !setups.length || !images.length) {
+    const customAd = aiAds.map((ad) => ({
+      id: ad.id,
+      image: ad.images[0],
+      setup: ad.setup.ads[0].data,
+      origin: "ai" as "ai"
+    }));
+    setCustomAds(customAd);
+
+  }, [aiAds]);
+
+  useEffect(() => {
+    //put all ads in one array and shuffle them
+    const ads = [...customAds, ...realAds];
+    //ads.sort(() => Math.random() - 0.5);
+    setAllAds(ads);
+  }, [customAds, realAds]);
+
+  if (allAds.length < 10) {
     return (
       <div className="flex h-screen w-screen place-content-center items-center">
         <CircularProgress />
@@ -53,23 +76,30 @@ const AiOrRealComponent = () => {
 
   return (
     <section className="relative mx-auto h-full min-h-screen max-w-md px-8 pt-4">
-      {ads.map((ad, index) => (
+      {allAds.map((ad, index) => (
         <div key={index}>
           {page === index && (
             <>
               <div className="mb-4 h-full">
                 <h1 className="w-full border-b-2 border-dashed border-white/50 pb-4 pt-8 text-4xl">
-                  <span className="text-4xl text-secondary">{page}</span>
-                  <span className="text-2xl">/10</span>
+                  <span className="text-4xl text-secondary">{page + 1}</span>
+                  <span className="text-2xl">/{allAds.length + 1}</span>
                 </h1>
               </div>
-              <DisplayAd setup={setups[index]} images={images[index]} />
+              {ad.origin == "ai" && (
+
+                <DisplayAd setup={ad.setup} images={ad.image} />)
+              }
+              {ad.origin == "real" && (
+
+                <DisplayRealAd locale={locale} setup={ad.setup} images={ad.image} />)
+              }
             </>
           )}
         </div>
       ))}
 
-      <div className=" absolute bottom-0 left-0 flex w-full max-w-md flex-row px-8 py-8">
+      <div className=" relative flex w-full max-w-md flex-row pt-2 pb-4">
         <button
           type="button"
           onClick={handleFakeClick}
@@ -82,7 +112,7 @@ const AiOrRealComponent = () => {
           onClick={handleAiClick}
           className="mx-2 w-full rounded bg-secondary p-3 text-center text-xl"
         >
-          {'Ai'}
+          {'AI'}
         </button>
       </div>
     </section>

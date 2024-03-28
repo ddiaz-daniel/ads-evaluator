@@ -1,0 +1,258 @@
+[
+    {
+        "id": "1001",
+        "image": "/ads/food.jpg",
+        "origin": "real",
+        "setup": {
+            "description": {
+                "en": "Have you ever tried our salad with grilled goat cheese?\n\nEnhanced with sour apple, walnuts, honey dressing, and crispy oven baguette, this is our absolute favorite!\n\n#salad#foodoftheday",
+                "es": "¿Alguna vez has probado nuestra ensalada con queso de cabra a la parrilla?\n¡Mejorada con manzana ácida, nueces, aderezo de miel y baguette crujiente al horno, esta es nuestra favorita absoluta!\n\n#ensalada#comidadehoy",
+                "fr": "Avez-vous déjà essayé notre salade avec du fromage de chèvre grillé ?\n\nRehaussée avec une pomme acide, des noix, une vinaigrette au miel et une baguette croustillante sortie du four, c'est notre préférée absolue !\n\n#salade#platdujour",
+                "de": "Haben Sie schon einmal unseren Salat mit gegrilltem Ziegenkäse probiert?\n\nVerfeinert mit saurem Apfel, Walnüssen, Honigdressing und knusprigem Ofen-Baguette ist dies unser absoluter Favorit!\n\n#salad#foodoftheday",
+                "it": "Hai mai provato la nostra insalata con formaggio di capra alla griglia?\n\nArricchita con mela acida, noci, condimento al miele e croccante baguette al forno, questa è la nostra assoluta preferita!\n\n#insalata#cibodelgiorno",
+                "pt": "Já experimentou nossa salada com queijo de cabra grelhado?\n\nAperfeiçoada com maçã azeda, nozes, molho de mel e baguete crocante do forno, esta é a nossa favorita absoluta!\n\n#salada#comidadehoje"
+            },
+            "labels": [],
+            "footer": {
+                "en": "Learn more",
+                "es": "Más información",
+                "fr": "En savoir plus",
+                "de": "Mehr erfahren",
+                "it": "Ulteriori informazioni",
+                "pt": "Saiba mais"
+            }
+        }
+    },
+    {
+        "id": "1002",
+        "image": "/ads/car.jpg",
+        "origin": "real",
+        "setup": {
+            "description": {
+                "en": "True campers are also on the move in winter.\n\nHands up: who among you also camps in the cold season?\n\n#vans#MarcoPolo#camping",
+                "es": "Los verdaderos campistas también están en movimiento en invierno.\n\n¡Levanten la mano: quién de ustedes también acampa en la temporada fría?\n\n#vans#MarcoPolo#camping",
+                "fr": "Les vrais campeurs sont également en mouvement en hiver.\n\nLes mains en l'air : qui parmi vous campe aussi en saison froide ?\n\n#vans#MarcoPolo#camping",
+                "de": "Echte Camper sind auch im Winter unterwegs.\n\nHände hoch: Wer von euch campt auch in der kalten Jahreszeit?\n\n#vans#MarcoPolo#camping",
+                "it": "I veri campeggiatori sono anche in movimento in inverno.\n\nAlzate le mani: chi di voi campeggia anche nella stagione fredda?\n\n#vans#MarcoPolo#camping",
+                "pt": "Os verdadeiros campistas também estão em movimento no inverno.\n\nMãos ao alto: quem entre vocês também acampa na estação fria?\n\n#vans#MarcoPolo#camping"
+            },
+            "labels": [],
+            "footer": {
+                "en": "Learn more",
+                "es": "Más información",
+                "fr": "En savoir plus",
+                "de": "Mehr erfahren",
+                "it": "Ulteriori informazioni",
+                "pt": "Saiba mais"
+            }
+        }
+    },
+    {
+        "id": "1003",
+        "image": "/ads/coffee.jpg",
+        "origin": "real",
+        "setup": {
+            "description": {
+                "en": "Summer, sun, and a bit of beach feeling in winter without traveling? With our Coconut Chocolate, you can even dream of it while enjoying a hot chocolate. 😋\nYou can find our new Hot Chocolate recipe with Coconut among our winter creations.\n\n#hotchocolate",
+                "es": "¿Verano, sol y un poco de sensación de playa en invierno sin viajar? Con nuestro Chocolate de Coco, incluso puedes soñarlo mientras disfrutas de un chocolate caliente. 😋\nNuestra nueva receta de Chocolate Caliente con Coco la encontrarás entre nuestras creaciones de invierno.\n\n#hotchocolate",
+                "fr": "Été, soleil et un peu de sensation de plage en hiver sans voyager ? Avec notre Chocolat à la Noix de Coco, vous pouvez même rêver tout en dégustant un chocolat chaud. 😋\nVous trouverez notre nouvelle recette de Chocolat Chaud avec de la Noix de Coco parmi nos créations hivernales.\n\n#hotchocolate",
+                "de": "Sommer, Sonne und ein bisschen Strandfeeling im Winter ohne zu verreisen? Mit unserem Coconut Chocolate lässt es sich auch bei einer heißen Schokolade ganz gut davon träumen. 😋\nUnser neues Hot Chocolate Rezept mit Coconut findet ihr bei unseren Winterkreationen.\n\n#hotchocolate",
+                "it": "Estate, sole e un po' di sensazione di spiaggia in inverno senza viaggiare? Con il nostro Cioccolato al Cocco, puoi anche sognarlo mentre ti godi una cioccolata calda. 😋\nLa nostra nuova ricetta di Cioccolata Calda con Cocco la trovi tra le nostre creazioni invernali.\n\n#hotchocolate",
+                "pt": "Verão, sol e um pouco de sensação de praia no inverno sem viajar? Com nosso Chocolate de Coco, você pode até sonhar com isso enquanto desfruta de um chocolate quente. 😋\nVocê pode encontrar nossa nova receita de Chocolate Quente com Coco entre nossas criações de inverno.\n\n#hotchocolate"
+            },
+            "labels": [],
+            "footer": {
+                "en": "Learn more",
+                "es": "Más información",
+                "fr": "En savoir plus",
+                "de": "Mehr erfahren",
+                "it": "Ulteriori informazioni",
+                "pt": "Saiba mais"
+            }
+        }
+    },
+    {
+        "id": "1004",
+        "image": "/ads/earphones.jpg",
+        "origin": "real",
+        "setup": {
+            "description": {
+                "en": "Our smallest and lightest True-Wireless earbuds with Noise Cancelling are now available in a new color, 'Earth Blue' – made with recycled plastic water bottles. #headphones #recycling #plasticbottles #recycle #recycled #audio #personalaudio #musiclover",
+                "es": "Nuestros auriculares True-Wireless más pequeños y ligeros con cancelación de ruido ahora están disponibles en un nuevo color, 'Earth Blue' – fabricados con botellas de plástico reciclado. #auriculares #reciclaje #botellasdeplástico #reciclar #reciclado #audio #audioindividual #amantedelamusica",
+                "fr": "Nos écouteurs True-Wireless les plus petits et les plus légers avec annulation de bruit sont désormais disponibles dans une nouvelle couleur, 'Earth Blue' – fabriqués à partir de bouteilles d'eau en plastique recyclé. #écouteurs #recyclage #bouteillesenplastique #recyclé #audio #audioindividuel #amateurdemusique",
+                "de": "Unsere kleinsten und leichtesten True-Wireless-Ohrhörer mit Noise Cancelling sind jetzt in einer neuen Farbe erhältlich, 'Earth Blue' – hergestellt aus recycelten Plastikwasserflaschen. #kopfhörer #recycling #plastikflaschen #recyceln #recycelt #audio #personalaudio #musikliebhaber",
+                "it": "I nostri auricolari True-Wireless più piccoli e leggeri con cancellazione del rumore sono ora disponibili in un nuovo colore, 'Earth Blue' – realizzati con bottiglie di plastica riciclata. #cuffie #riciclaggio #bottiglie diplastica #riciclo #riciclato #audio #audioindividuale #amantedellamusica",
+                "pt": "Nossos menores e mais leves fones de ouvido True-Wireless com Cancelamento de Ruído agora estão disponíveis em uma nova cor, 'Earth Blue' – feitos com garrafas de água de plástico reciclado. #fones de ouvido #reciclagem #garrafasdeplástico #reciclagem #reciclado #audio #audioindividual #amantedemusica"
+            },
+            "labels": [],
+            "footer": {
+                "en": "Learn more",
+                "es": "Más información",
+                "fr": "En savoir plus",
+                "de": "Mehr erfahren",
+                "it": "Ulteriori informazioni",
+                "pt": "Saiba mais"
+            }
+        }
+    },
+    {
+        "id": "1005",
+        "image": "/ads/gin.jpg",
+        "origin": "real",
+        "setup": {
+            "description": {
+                "en": "Original. Cool, crisp, refreshing.\n\nGarnishes are always a must-have, accentuating the nuances of the gin…\n\n🍋 Zesty lemon enhances citrusy gins.\n💚 Lime complements those with a sharper bite.\n🌱 Fragrant rosemary infuses herbal notes, which is perfect for botanical-forward varieties.\n",
+                "es": "Original. Fresco, nítido, refrescante.\n\nLos adornos siempre son imprescindibles, acentuando los matices del gin…\n\n🍋 El limón con chispa realza los gins cítricos.\n💚 La lima complementa a aquellos con un sabor más intenso.\n🌱 El fragante romero infunde notas herbales, lo cual es perfecto para variedades con botánicos predominantes.\n",
+                "fr": "Original. Frais, net, rafraîchissant.\n\nLes garnitures sont toujours indispensables, accentuant les nuances du gin…\n\n🍋 Le citron zesté rehausse les gins citronnés.\n💚 La lime complète ceux avec une morsure plus forte.\n🌱 Le romarin parfumé infuse des notes herbacées, ce qui est parfait pour les variétés dominées par les botaniques.\n",
+                "de": "Original. Kühl, klar, erfrischend.\n\nGarnierungen sind immer ein Muss und betonen die Nuancen des Gins…\n\n🍋 Zitroniger Geschmack verleiht zitrusartigen Gins eine besondere Note.\n💚 Limette ergänzt diejenigen mit einem kräftigeren Biss.\n🌱 Der duftende Rosmarin verleiht herbale Noten, was perfekt für botanikreiche Sorten ist.\n",
+                "it": "Originale. Fresco, nitido, rinfrescante.\n\nLe guarnizioni sono sempre un must, accentuando le sfumature del gin…\n\n🍋 Il limone frizzante esalta i gins agrumati.\n💚 Il lime completa quelli con un morso più deciso.\n🌱 Il profumato rosmarino infonde note erbacee, perfette per le varietà botaniche.\n",
+                "pt": "Original. Fresco, nítido, refrescante.\n\nOs enfeites são sempre indispensáveis, acentuando as nuances do gin…\n\n🍋 O limão zestoso realça os gins cítricos.\n💚 A lima complementa aqueles com uma mordida mais pronunciada.\n🌱 O alecrim perfumado infunde notas herbais, perfeito para variedades com predominância de botânicos.\n"
+            },
+            "labels": [
+                {
+                    "position": {
+                        "y": 255,
+                        "x": 0
+                    },
+                    "fontWeight": 700,
+                    "fontSize": 26,
+                    "text": {
+                        "en": "WINTER LEMON",
+                        "es": "WINTER LEMON",
+                        "fr": "WINTER LEMON",
+                        "de": "WINTER LEMON",
+                        "it": "WINTER LEMON",
+                        "pt": "WINTER LEMON"
+                    }
+                },
+                {
+                    "position": {
+                        "y": 298,
+                        "x": 0
+                    },
+                    "fontSize": 8,
+                    "text": {
+                        "en": "Enjoy responsibly and do not share this content with persons under 18 years of age.",
+                        "es": "Disfruta de manera responsable y no compartas este contenido con personas menores de 18 años.",
+                        "fr": "Profitez de manière responsable et ne partagez pas ce contenu avec des personnes de moins de 18 ans.",
+                        "de": "Genießen Sie verantwortungsbewusst und teilen Sie diesen Inhalt nicht mit Personen unter 18 Jahren.",
+                        "it": "Goditi in modo responsabile e non condividere questo contenuto con persone di età inferiore ai 18 anni.",
+                        "pt": "Desfrute de forma responsável e não compartilhe este conteúdo com pessoas com menos de 18 anos."
+                    }
+                }
+            ],
+            "footer": {
+                "en": "Learn more",
+                "es": "Más información",
+                "fr": "En savoir plus",
+                "de": "Mehr erfahren",
+                "it": "Ulteriori informazioni",
+                "pt": "Saiba mais"
+            }
+        }
+    },
+    {
+        "id": "1006",
+        "image": "/ads/room1.jpg",
+        "origin": "real",
+        "setup": {
+            "description": {
+                "en": "New inspirations in Japanese style that have stolen our hearts! 😊😊\n\nWe are lovers of loft display cabinets in all possible variations. How about a steel cabinet? Too daring or perhaps the opposite? Let us know in the comments! 😊 #inspirations #LOFTinspirations #interiordesigninspirations #interiordesign",
+                "es": "¡Nuevas inspiraciones en estilo japonés que han robado nuestros corazones! 😊😊\n\nSomos amantes de las vitrinas de loft en todas sus posibles variaciones. ¿Qué tal una vitrina de acero? ¿Demasiado atrevido o tal vez lo contrario? ¡Déjanos saber en los comentarios! 😊 #inspiraciones #inspiracionesdeLOFT #inspiracionesdediseñodeinteriores #diseñodeinteriores",
+                "fr": "Nouvelles inspirations dans le style japonais qui ont volé nos cœurs ! 😊😊\n\nNous sommes amateurs de vitrines de loft dans toutes leurs variations possibles. Et une vitrine en acier ? Trop audacieux ou peut-être le contraire ? Faites-le nous savoir dans les commentaires ! 😊 #inspirations #inspirationsdeLOFT #inspirationsdedesignd'intérieur #designd'intérieur",
+                "de": "Neue Inspirationen im japanischen Stil, die unsere Herzen gestohlen haben! 😊😊\n\nWir sind Liebhaber von Loft-Vitrinen in allen möglichen Varianten. Wie wäre es mit einer Vitrine aus Stahl? Zu gewagt oder vielleicht das Gegenteil? Lass es uns in den Kommentaren wissen! 😊 #inspirationen #LOFTinspirationen #innenarchitekturinspirationen #innenarchitektur",
+                "it": "Nuove ispirazioni in stile giapponese che ci hanno rubato il cuore! 😊😊\n\nSiamo amanti delle vetrine da loft in tutte le loro possibili varianti. Cosa ne pensi di una vetrina in acciaio? Troppo audace o forse il contrario? Famcelo sapere nei commenti! 😊 #ispirazioni #ispirazionidaLOFT #ispirazionididesignd'interni #designd'interni",
+                "pt": "Novas inspirações no estilo japonês que roubaram nossos corações! 😊😊\n\nSomos amantes de vitrines de loft em todas as suas possíveis variações. Que tal uma vitrine de aço? Muito ousado ou talvez o contrário? Deixe-nos saber nos comentários! 😊 #inspirações #inspiraçõesdeLOFT #inspiraçõesdedesigndeinteriores #designdeinteriores"
+            },
+            "labels": [],
+            "footer": {
+                "en": "Learn more",
+                "es": "Más información",
+                "fr": "En savoir plus",
+                "de": "Mehr erfahren",
+                "it": "Ulteriori informazioni",
+                "pt": "Saiba mais"
+            }
+        }
+    },
+    {
+        "id": "1008",
+        "image": "/ads/shoe1.jpg",
+        "origin": "real",
+        "setup": {
+            "description": {
+                "en": "Get 50% off on your first order",
+                "es": "Obtenga un 50% de descuento en su primer pedido",
+                "fr": "Obtenez 50% de réduction sur votre première commande",
+                "de": "Erhalten Sie 50% Rabatt auf Ihre erste Bestellung",
+                "it": "Ottieni il 50% di sconto sul tuo primo ordine",
+                "pt": "Receba 50% de desconto no seu primeiro pedido"
+            },
+            "labels": [
+                {
+                    "position": {
+                        "top": "10%",
+                        "left": "10%"
+                    },
+                    "fontSize": 12,
+                    "text": {
+                        "en": "Order now",
+                        "es": "Ordenar ahora",
+                        "fr": "Commander maintenant",
+                        "de": "Jetzt bestellen",
+                        "it": "Ordina ora",
+                        "pt": "Encomende agora"
+                    }
+                }
+            ],
+            "footer": {
+                "en": "Learn more",
+                "es": "Más información",
+                "fr": "En savoir plus",
+                "de": "Mehr erfahren",
+                "it": "Ulteriori informazioni",
+                "pt": "Saiba mais"
+            }
+        }
+    },
+    {
+        "id": "10010",
+        "image": "/ads/ski.jpg",
+        "origin": "real",
+        "setup": {
+            "description": {
+                "en": "Get 50% off on your first order",
+                "es": "Obtenga un 50% de descuento en su primer pedido",
+                "fr": "Obtenez 50% de réduction sur votre première commande",
+                "de": "Erhalten Sie 50% Rabatt auf Ihre erste Bestellung",
+                "it": "Ottieni il 50% di sconto sul tuo primo ordine",
+                "pt": "Receba 50% de desconto no seu primeiro pedido"
+            },
+            "labels": [
+                {
+                    "position": {
+                        "top": "10%",
+                        "left": "10%"
+                    },
+                    "fontSize": 12,
+                    "text": {
+                        "en": "Order now",
+                        "es": "Ordenar ahora",
+                        "fr": "Commander maintenant",
+                        "de": "Jetzt bestellen",
+                        "it": "Ordina ora",
+                        "pt": "Encomende agora"
+                    }
+                }
+            ],
+            "footer": {
+                "en": "Learn more",
+                "es": "Más información",
+                "fr": "En savoir plus",
+                "de": "Mehr erfahren",
+                "it": "Ulteriori informazioni",
+                "pt": "Saiba mais"
+            }
+        }
+    }
+]

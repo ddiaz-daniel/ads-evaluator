@@ -31,3 +31,11 @@ export const getAllGeneratedAds = async () => {
   });
   return ads;
 };
+
+export const getLocalAds = async () => {
+  //get ads from a local json file
+  const response = await fetch('/real-ads.json');
+  const ads = await response.json();
+
+  return ads;
+};

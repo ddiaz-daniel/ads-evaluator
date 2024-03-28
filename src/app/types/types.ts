@@ -151,3 +151,46 @@ export type InstagramFooter = {
   color: string;
   background_color: string;
 };
+
+export type RealAdLabels = {
+  position: Position;
+  fontSize: number;
+  fontWeight?: number;
+  text:
+  {
+    en: string;
+    fr: string;
+    de: string;
+    es: string;
+    pt: string;
+    it: string;
+  };
+};
+
+export type RealSetup = {
+  description: {
+    en: string;
+    fr: string;
+    de: string;
+    es: string;
+    pt: string;
+    it: string;
+  };
+  labels: RealAdLabels[];
+  footer: {
+    en: string;
+    fr: string;
+    de: string;
+    es: string;
+    pt: string;
+    it: string;
+  };
+};
+
+export type RealAd = {
+  id: string;
+  image: string;
+  origin: "real";
+  setup: RealSetup;
+};
+

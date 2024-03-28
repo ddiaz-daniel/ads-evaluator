@@ -12,7 +12,7 @@ import { QuestionnaireData } from '@/app/types/types';
 import {
   createNewProfile,
   getProfileById,
-} from '@/app/utils/firebase/funtions';
+} from '@/app/utils/firebase/functions';
 import { useRouter } from '@/app/utils/navigation/navigation';
 
 const DemographicsForm = () => {
@@ -33,7 +33,7 @@ const DemographicsForm = () => {
       hobbies,
     };
     await createNewProfile(id, profile).then(() => {
-      route.push('/ai-or-real');
+      route.push('/get-started');
     });
   };
 
