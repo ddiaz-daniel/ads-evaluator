@@ -103,7 +103,7 @@ export type AdComponents = {
   logo: Logo;
   text: AdText[];
   image: Image;
-  post_caption?: string;
+  post_caption: MultiLanguageText;
   footer?: InstagramFooter;
 };
 
@@ -118,7 +118,7 @@ type Logo = {
 export type AdText = {
   position: Position;
   fontSize: number;
-  content: string;
+  content: MultiLanguageText;
   font: string;
   color: string;
   style: string;
@@ -129,6 +129,15 @@ export type AdText = {
   background_color: string;
   background_opacity: number;
   width?: number;
+};
+
+export type MultiLanguageText = {
+  en: string;
+  fr: string;
+  de: string;
+  es: string;
+  it: string;
+  pt: string;
 };
 
 export type Position = {
@@ -147,7 +156,7 @@ export type Image = {
 };
 
 export type InstagramFooter = {
-  content: string;
+  content: MultiLanguageText;
   color: string;
   background_color: string;
 };
@@ -156,6 +165,7 @@ export type RealAdLabels = {
   position: Position;
   fontSize: number;
   fontWeight?: number;
+  fontColor?: string;
   text:
   {
     en: string;

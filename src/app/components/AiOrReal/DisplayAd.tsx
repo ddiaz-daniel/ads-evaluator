@@ -7,14 +7,15 @@ import { AdComponents } from '@/app/types/types';
 type DisplayAdProps = {
   setup: AdComponents;
   images: string;
+  locale: 'en' | 'fr' | 'de' | 'es' | 'pt' | 'it';
 };
 
-const DisplayAd = ({ setup, images }: DisplayAdProps) => {
+const DisplayAd = ({ setup, images, locale }: DisplayAdProps) => {
   return (
-    <div className="relative h-full w-full max-w-full">
-      <div className="relative mx-auto h-full max-w-md">
+    <div className="relative w-full max-w-full">
+      <div className="relative mx-auto max-w-md">
         <div className="flex place-content-center items-center">
-          <section className="flex w-fit flex-col items-center border-y-8 border-black bg-black py-4">
+          <section className="flex w-fit flex-col items-center border-y-8 border-black bg-black pb-4 h-[640px] overflow-y-scroll overflow-x-hidden">
             <div className="w-42 flex flex-row space-x-4 ">
               <div
                 style={{ width: `${320}px`, height: `${320}px` }}
@@ -37,7 +38,7 @@ const DisplayAd = ({ setup, images }: DisplayAdProps) => {
                     className="absolute h-fit w-fit"
                     style={{
                       top: `${text.position.y * (320 / 1080)}px`,
-                      left: `${text.position.x * (300 / 1080)}px`,
+                      left: `${text.position.x * (150 / 1080)}px`,
                       fontSize: `${text.fontSize * 0.8}px`,
                       color: `${text.color}`,
                       fontFamily: `${text.font}`,
@@ -56,7 +57,7 @@ const DisplayAd = ({ setup, images }: DisplayAdProps) => {
                       width: `${text.width ? text.width : 320}px`,
                     }}
                   >
-                    {text.content}
+                    {text.content[locale]}
                   </p>
                 ))}
               </div>
@@ -64,7 +65,7 @@ const DisplayAd = ({ setup, images }: DisplayAdProps) => {
             <div
               className="flex h-10 w-[300px] flex-row items-center justify-between bg-black text-sm font-semibold border-b-[1px] border-gray-500/80"
             >
-              {setup.footer?.content}
+              {setup.footer?.content[locale]}
               <IoIosArrowForward size={22} />
             </div>
             <div className="flex h-10 w-[320px] flex-row justify-between bg-black px-3 py-3">
@@ -79,10 +80,10 @@ const DisplayAd = ({ setup, images }: DisplayAdProps) => {
             </div>
             <div className="flex h-36 w-[320px] flex-row bg-black pb-1 pt-1">
               <label className="line-clamp-7 px-3 text-start text-sm text-white">
-                <span className="font-semibold text-transparent">
-                  {'HelloThere'}{' '}
+                <span className="font-semibold ">
+                  {'InstaAds'}{' '}
                 </span>
-                {`${setup.post_caption}`}
+                {`${setup.post_caption[locale]}`}
               </label>
             </div>
           </section>

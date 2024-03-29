@@ -13,20 +13,13 @@ type DisplayRealAdProps = {
 
 const DisplayRealAd = ({ setup, images, locale }: DisplayRealAdProps) => {
 
-  console.log(setup);
-  console.log(images);
-  console.log(locale);
-  if (!setup.description[locale]) {
-    return null;
-  }
   const splitDescription = setup.description[locale].split('\n');
 
-
   return (
-    <div className="relative h-full w-full max-w-full">
+    <div className="relative h-full w-full max-w-full overflow-y-auto">
       <div className="relative mx-auto h-full max-w-md">
         <div className="flex place-content-center items-center">
-          <section className="flex w-fit flex-col items-center border-y-8 border-black bg-black py-4">
+          <section className="flex w-fit flex-col items-center border-y-8 border-black bg-black pb-4 h-[640px] overflow-y-scroll">
             <div className="w-42 flex flex-row space-x-4 ">
               <div
                 style={{ width: `${320}px`, height: `${320}px` }}
@@ -51,7 +44,7 @@ const DisplayRealAd = ({ setup, images, locale }: DisplayRealAdProps) => {
                       top: `${text.position.y}px`,
                       left: `${text.position.x}px`,
                       fontSize: `${text.fontSize}px`,
-                      color: `white`,
+                      color: `${text.fontColor ? text.fontColor : 'white'}`,
                       fontFamily: `arial, sans-serif`,
                       textAlign: 'center',
                       fontStyle: `normal`,
@@ -83,14 +76,14 @@ const DisplayRealAd = ({ setup, images, locale }: DisplayRealAdProps) => {
                 <FiSend size={24} className=" text-white" />
               </div>
             </div>
-            <div className="flex h-5 w-[320px] flex-row justify-between bg-black px-3 pt-1 text-sm text-white">
+            <div className="flex h-5 w-[320px] flex-row justify-between bg-black px-2 pt-1 text-sm text-white">
               {`100 likes`}
             </div>
             <div className="flex min-h-36 w-[320px] flex-row bg-black pt-1">
-              <label className="line-clamp-7 pl-2 pr-1 text-start text-sm font-light text-white">
-                <span className="font-semibold text-transparent">
-                  {'HelloThere'}{' '}
-                </span>
+              <label className="line-clamp-7 pl-2 pr-1  text-start text-sm font-light text-white">
+                <strong>
+                  {'InstaAds'}{' '}
+                </strong>
                 {splitDescription.map((line, index) => (
                   <span key={index}>{line}
                     <br /></span>

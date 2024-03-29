@@ -22,6 +22,15 @@ export const getProfileById = async (documentId: string) => {
   }
 };
 
+export const addDataToProile = async (
+  documentId: string,
+  data: { [key: string]: any; }
+) => {
+  const documentRef = doc(firestore, 'profiles', documentId);
+
+  await setDoc(documentRef, data, { merge: true });
+};
+
 export const getAllGeneratedAds = async () => {
   const collectionRef = collection(firestore, 'generated-ads');
   const querySnapshot = await getDocs(collectionRef);

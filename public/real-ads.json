@@ -86,12 +86,12 @@
             },
             "labels": [],
             "footer": {
-                "en": "Learn more",
-                "es": "Más información",
-                "fr": "En savoir plus",
-                "de": "Mehr erfahren",
-                "it": "Ulteriori informazioni",
-                "pt": "Saiba mais"
+                "en": "Shop now",
+                "es": "Comprar",
+                "fr": "Acheter",
+                "de": "Jetzt kaufen",
+                "it": "Acquista ora",
+                "pt": "Compre agora"
             }
         }
     },
@@ -181,37 +181,21 @@
         "origin": "real",
         "setup": {
             "description": {
-                "en": "Get 50% off on your first order",
-                "es": "Obtenga un 50% de descuento en su primer pedido",
-                "fr": "Obtenez 50% de réduction sur votre première commande",
-                "de": "Erhalten Sie 50% Rabatt auf Ihre erste Bestellung",
-                "it": "Ottieni il 50% di sconto sul tuo primo ordine",
-                "pt": "Receba 50% de desconto no seu primeiro pedido"
+                "en": "Black | White as light as a feather, protective - and soon your loved one's favorite piece.",
+                "es": "Black | White tan ligero como una pluma, protector - y pronto la pieza favorita de tus seres queridos.",
+                "fr": "Black | White aussi léger qu'une plume, protecteur - et bientôt le pièce préférée de vos proches.",
+                "de": "Black | White federleicht, schützend - und schon bald das Lieblingsteil deiner Liebsten.",
+                "it": "Black | White leggero come una piuma, protettivo - e presto il pezzo preferito dei tuoi cari.",
+                "pt": "Black | White tão leve como uma pena, protetor - e em breve a peça favorita dos seus entes queridos."
             },
-            "labels": [
-                {
-                    "position": {
-                        "top": "10%",
-                        "left": "10%"
-                    },
-                    "fontSize": 12,
-                    "text": {
-                        "en": "Order now",
-                        "es": "Ordenar ahora",
-                        "fr": "Commander maintenant",
-                        "de": "Jetzt bestellen",
-                        "it": "Ordina ora",
-                        "pt": "Encomende agora"
-                    }
-                }
-            ],
+            "labels": [],
             "footer": {
-                "en": "Learn more",
-                "es": "Más información",
-                "fr": "En savoir plus",
-                "de": "Mehr erfahren",
-                "it": "Ulteriori informazioni",
-                "pt": "Saiba mais"
+                "en": "Shop now",
+                "es": "Comprar",
+                "fr": "Acheter",
+                "de": "Jetzt kaufen",
+                "it": "Acquista ora",
+                "pt": "Compre agora"
             }
         }
     },
@@ -221,37 +205,55 @@
         "origin": "real",
         "setup": {
             "description": {
-                "en": "Get 50% off on your first order",
-                "es": "Obtenga un 50% de descuento en su primer pedido",
-                "fr": "Obtenez 50% de réduction sur votre première commande",
-                "de": "Erhalten Sie 50% Rabatt auf Ihre erste Bestellung",
-                "it": "Ottieni il 50% di sconto sul tuo primo ordine",
-                "pt": "Receba 50% de desconto no seu primeiro pedido"
+                "en": "Discover a variety of offers. Save up to 40% on top products. For a limited time only!",
+                "es": "¡Descubre una variedad de ofertas. Ahorra hasta un 40% en los mejores productos. ¡Solo por tiempo limitado!",
+                "fr": "Découvrez une variété d'offres. Économisez jusqu'à 40% sur les meilleurs produits. Pour une durée limitée seulement!",
+                "de": "Entdecke eine Vielzahl an Angeboten. Spare bis zu 40% auf Top-Produkte. Nur für kurze Zeit!",
+                "it": "Scopri una varietà di offerte. Risparmia fino al 40% sui migliori prodotti. Solo per un tempo limitato!",
+                "pt": "Descubra uma variedade de ofertas. Economize até 40% nos melhores produtos. Apenas por tempo limitado!"
             },
             "labels": [
                 {
                     "position": {
-                        "top": "10%",
-                        "left": "10%"
+                        "y": 230,
+                        "x": 0
                     },
-                    "fontSize": 12,
+                    "fontColor": "black",
+                    "fontSize": 20,
+                    "fontWeight": 800,
                     "text": {
-                        "en": "Order now",
-                        "es": "Ordenar ahora",
-                        "fr": "Commander maintenant",
-                        "de": "Jetzt bestellen",
-                        "it": "Ordina ora",
-                        "pt": "Encomende agora"
+                        "en": "END OF SEASON SALE",
+                        "es": "END OF SEASON SALE",
+                        "fr": "END OF SEASON SALE",
+                        "de": "END OF SEASON SALE",
+                        "it": "END OF SEASON SALE",
+                        "pt": "END OF SEASON SALE"
+                    }
+                },
+                {
+                    "position": {
+                        "y": 266,
+                        "x": 0
+                    },
+                    "fontColor": "black",
+                    "fontSize": 20,
+                    "text": {
+                        "en": "UP TO 40% OFF",
+                        "es": "HASTA 40% DE DESCUENTO",
+                        "fr": "JUSQU'À 40% DE RÉDUCTION",
+                        "de": "BIS ZU 40% SPAREN",
+                        "it": "FINO AL 40% DI SCONTO",
+                        "pt": "ATÉ 40% DE DESCONTO"
                     }
                 }
             ],
             "footer": {
-                "en": "Learn more",
-                "es": "Más información",
-                "fr": "En savoir plus",
-                "de": "Mehr erfahren",
-                "it": "Ulteriori informazioni",
-                "pt": "Saiba mais"
+                "en": "Shop now",
+                "es": "Comprar",
+                "fr": "Acheter",
+                "de": "Jetzt kaufen",
+                "it": "Acquista ora",
+                "pt": "Compre agora"
             }
         }
     }
