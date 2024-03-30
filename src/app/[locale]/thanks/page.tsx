@@ -2,6 +2,7 @@ import {
   useTranslations,
 } from 'next-intl';
 import React from 'react';
+import Image from 'next/image';
 
 export default function Thanks() {
   const t = useTranslations('thanks');
@@ -16,10 +17,11 @@ export default function Thanks() {
           </h1>
           <h2 className="mb-8 flex flex-col space-y-8 text-center text-base text-white">
             <span>
-              {t('first_paragraph')} <strong>{t('thesis')}</strong>
+              {t('first_paragraph')}
             </span>
             <span>{t('second_paragraph')}</span>
           </h2>
+          <Image src="/cat.png" alt="Thanks-cat" width={400} height={400} />
         </div>
 
       </div>

@@ -50,7 +50,6 @@ const QuestionnaireComponent = () => {
         t('question10'),
         t('question11'),
         t('question12'),
-        t('question13'),
     ];
 
     //Radio buttons functions
@@ -271,8 +270,8 @@ const QuestionnaireComponent = () => {
                     </>
                 }
 
-                <div className="absolute bottom-8 flex w-full justify-center">
-                    {page < 12 && (
+                <div className="absolute bottom-4 flex w-full justify-center">
+                    {page < 11 && (
                         <button
                             type="button"
                             onClick={handleNextPage}
@@ -281,7 +280,7 @@ const QuestionnaireComponent = () => {
                             {t('continue')}
                         </button>
                     )}
-                    {page === 12 && (
+                    {page === 11 && (
                         <button
                             type="submit"
                             onClick={handleSubmit}
