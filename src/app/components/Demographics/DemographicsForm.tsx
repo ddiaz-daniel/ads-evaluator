@@ -84,12 +84,12 @@ const DemographicsForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative mx-auto h-full min-h-screen max-w-md pt-8"
+      className="relative mx-auto h-full min-h-screen max-w-md pt-2"
     >
       {page !== 0 && (
         <button
           type="button"
-          className="absolute top-3 text-2xl"
+          className="absolute top-6 text-2xl"
           onClick={handleBack}
         >
           {'<-'}
@@ -97,9 +97,9 @@ const DemographicsForm = () => {
       )}
       {page === 0 && (
         <div className="mb-4 h-full">
-          <h1 className="my-8 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl">
+          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page}</span>
-            <span className="text-2xl">/4</span>
+            <span className="text-2xl">/5</span>
           </h1>
           <label htmlFor="gender" className="mb-1 block pb-8 text-2xl">
             {t('gender')}
@@ -111,9 +111,9 @@ const DemographicsForm = () => {
 
       {page === 1 && (
         <div className="mb-4">
-          <h1 className="my-8 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl">
+          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page}</span>
-            <span className="text-2xl">/4</span>
+            <span className="text-2xl">/5</span>
           </h1>
           <label htmlFor="age" className="mb-1 block pb-8 text-2xl">
             {t('age')}
@@ -124,9 +124,9 @@ const DemographicsForm = () => {
 
       {page === 2 && (
         <div className="mb-4">
-          <h1 className="my-8 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl">
+          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page}</span>
-            <span className="text-2xl">/4</span>
+            <span className="text-2xl">/5</span>
           </h1>
           <label htmlFor="country" className="mb-1 block pb-8 text-2xl">
             {t('country')}
@@ -137,9 +137,9 @@ const DemographicsForm = () => {
 
       {page === 3 && (
         <div className="">
-          <h1 className="my-8 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl">
+          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page}</span>
-            <span className="text-2xl">/4</span>
+            <span className="text-2xl">/5</span>
           </h1>
           <label htmlFor="occupation" className="mb-1 block pb-8 text-2xl">
             {t('occupation')}
@@ -150,9 +150,9 @@ const DemographicsForm = () => {
 
       {page === 4 && (
         <div className="h-full">
-          <h1 className="my-8 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl">
-            <span className="text-4xl text-secondary">{page}</span>
-            <span className="text-2xl">/4</span>
+          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+            <span className="text-4xl text-secondary">{page + 1}</span>
+            <span className="text-2xl">/5</span>
           </h1>
           <label htmlFor="hobbies" className="mb-1 block pb-8 text-2xl">
             {t('hobbies')}
@@ -175,9 +175,10 @@ const DemographicsForm = () => {
         )}
         {page === 4 && (
           <button
+            disabled={hobbies.length === 0}
             type="submit"
             onClick={handleSubmit}
-            className="mx-8 w-full rounded bg-secondary p-3 text-center"
+            className="mx-8 w-full rounded bg-secondary p-3 text-center disabled:bg-slate-500 disabled:opacity-50"
           >
             {t('continue')}
           </button>

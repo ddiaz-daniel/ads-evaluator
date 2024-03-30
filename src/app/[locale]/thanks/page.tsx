@@ -1,9 +1,10 @@
-import SwitchLanguage from '@/app/components/UI/LanguageSelector';
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import {
+  useTranslations,
+} from 'next-intl';
+import React from 'react';
 
-export default function Intro() {
-  const t = useTranslations('introduction');
+export default function Thanks() {
+  const t = useTranslations('thanks');
 
   return (
     <section className="relative flex h-screen w-full justify-center bg-primary">
@@ -20,14 +21,7 @@ export default function Intro() {
             <span>{t('second_paragraph')}</span>
           </h2>
         </div>
-        <div className="absolute bottom-8 flex w-full max-w-md justify-center">
-          <Link
-            href="/demographics"
-            className="mx-8 w-full rounded bg-secondary p-3 text-center"
-          >
-            {t('continue')}
-          </Link>
-        </div>
+
       </div>
     </section>
   );

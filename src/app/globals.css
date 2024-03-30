@@ -31,3 +31,23 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Track */
+::-webkit-scrollbar {
+  width: 3px;
+  /* width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  /* color of the scrollbar handle */
+  border-radius: 999px;
+  /* make it round */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* change color on hover */
+}

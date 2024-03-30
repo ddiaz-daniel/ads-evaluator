@@ -46,6 +46,15 @@ export type QuestionnaireData = {
   hobbies: string[];
 };
 
+export type Project = {
+  id?: string;
+  form: string;
+  date: Date;
+  prompt: string;
+  ads: Ad[];
+  type: 'Project';
+};
+
 export type Ad = {
   id: string;
   persona: Persona;
@@ -166,8 +175,7 @@ export type RealAdLabels = {
   fontSize: number;
   fontWeight?: number;
   fontColor?: string;
-  text:
-  {
+  text: {
     en: string;
     fr: string;
     de: string;
@@ -200,7 +208,37 @@ export type RealSetup = {
 export type RealAd = {
   id: string;
   image: string;
-  origin: "real";
+  origin: 'real';
   setup: RealSetup;
 };
 
+export type AiOrRealAnswers = {
+  id: string;
+  answer: string;
+};
+
+export type QuestionnaireAnswer = {
+  question: string;
+  answer: string;
+};
+
+export type User = {
+  id: string;
+  ageRange: AgeRange;
+  country: string;
+  gender: string;
+  occupation: string;
+  hobbies: string[];
+  aiOrReal?: AiOrRealAnswers[];
+  questionnaireAnswers?: QuestionnaireAnswer[];
+  adRelatedId: string;
+  relatedInterest: string;
+  relatedPersona: string;
+};
+
+export type TargetedAds = {
+  ad: Ad;
+  id: string;
+  relatedInterest: string;
+  relatedPersona: string;
+};

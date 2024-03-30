@@ -8,18 +8,17 @@ import React from 'react';
 type DisplayRealAdProps = {
   setup: RealSetup;
   images: string;
-  locale: "en" | "fr" | "de" | "es" | "pt" | "it";
+  locale: 'en' | 'fr' | 'de' | 'es' | 'pt' | 'it';
 };
 
 const DisplayRealAd = ({ setup, images, locale }: DisplayRealAdProps) => {
-
   const splitDescription = setup.description[locale].split('\n');
 
   return (
     <div className="relative h-full w-full max-w-full overflow-y-auto">
       <div className="relative mx-auto h-full max-w-md">
         <div className="flex place-content-center items-center">
-          <section className="flex w-fit flex-col items-center border-y-8 border-black bg-black pb-4 h-[640px] overflow-y-scroll">
+          <section className="flex h-[630px] w-fit flex-col items-center overflow-y-scroll border-y-8 border-black bg-black pb-4">
             <div className="w-42 flex flex-row space-x-4 ">
               <div
                 style={{ width: `${320}px`, height: `${320}px` }}
@@ -63,9 +62,7 @@ const DisplayRealAd = ({ setup, images, locale }: DisplayRealAdProps) => {
                 ))}
               </div>
             </div>
-            <div
-              className="flex h-10 w-[300px] flex-row items-center justify-between bg-black text-sm font-semibold border-b-[1px] border-gray-500/80"
-            >
+            <div className="flex h-10 w-[300px] flex-row items-center justify-between border-b-[1px] border-gray-500/80 bg-black text-sm font-semibold">
               {setup.footer[locale]}
               <IoIosArrowForward size={22} />
             </div>
@@ -81,14 +78,13 @@ const DisplayRealAd = ({ setup, images, locale }: DisplayRealAdProps) => {
             </div>
             <div className="flex min-h-36 w-[320px] flex-row bg-black pt-1">
               <label className="line-clamp-7 pl-2 pr-1  text-start text-sm font-light text-white">
-                <strong>
-                  {'InstaAds'}{' '}
-                </strong>
+                <strong>{'InstaAds'} </strong>
                 {splitDescription.map((line, index) => (
-                  <span key={index}>{line}
-                    <br /></span>
-                ))
-                }
+                  <span key={index}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
               </label>
             </div>
           </section>

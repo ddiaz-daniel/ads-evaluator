@@ -23,6 +23,8 @@ const SelectLanguagePage: FC<SelectLanguagePageProps> = ({ intl }) => {
 
   const handleChange = async (lang: string) => {
     if (router) {
+      localStorage.setItem('language', lang);
+
       await router.replace(pathname, { locale: lang });
     }
   };

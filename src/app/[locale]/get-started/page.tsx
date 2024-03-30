@@ -12,14 +12,12 @@ export default function Intro() {
           <SwitchLanguage />
         </div>
 
-        <div className="px-8 pt-28">
+        <div className="w-full px-8 pt-28">
           <h1 className="mb-32 text-center text-2xl font-bold text-white">
             {t('title')}
           </h1>
           <h2 className="mb-8 flex flex-col space-y-8 text-center text-base text-white">
-            <span>
-              {t('first_paragraph')}
-            </span>
+            <span>{t('first_paragraph')}</span>
             <span>{t('second_paragraph')}</span>
           </h2>
         </div>

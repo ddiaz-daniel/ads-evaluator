@@ -45,7 +45,7 @@ const HobbiesSection: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container spacing={1}>
+      <Grid container spacing={0.2} justifyItems={'evenly'}>
         {listOfHobbies.map((hobby) => (
           <Grid item xs={false} sm={false} key={hobby.code}>
             <ToggleButton
@@ -63,6 +63,7 @@ const HobbiesSection: React.FC = () => {
                 width: '100%',
                 height: '2.5rem',
                 justifySelf: 'center',
+                padding: '0.2rem',
               }}
             >
               {hobby.name}
