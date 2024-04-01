@@ -8,7 +8,7 @@ export default function Thanks() {
   const t = useTranslations('thanks');
 
   return (
-    <section className="relative flex h-screen w-full justify-center bg-primary">
+    <section className="relative flex h-screen w-full justify-center bg-primary overflow-y-hidden">
       <div className="justtify-center flex w-full max-w-md">
 
         <div className="px-8 pt-28">
@@ -21,7 +21,7 @@ export default function Thanks() {
             </span>
             <span>{t('second_paragraph')}</span>
           </h2>
-          <Image src="/cat.png" alt="Thanks-cat" width={400} height={400} />
+          <Image src="/cat.png" alt="Thanks-cat" width={400} height={400} className=' object-contain' />
         </div>
 
       </div>

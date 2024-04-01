@@ -107,7 +107,6 @@ const QuestionnaireComponent = () => {
 
             if (userId) {
                 const currentUser = allUsers.find((user) => user.id === userId);
-                console.log(currentUser?.hobbies);
                 //check relation between user interests and ads
                 const interestRelatedAds: TargetedAds[] =
                     await getAllGeneratedAdsFilteredByInterests(
@@ -156,13 +155,10 @@ const QuestionnaireComponent = () => {
                     return { ad, coincidences };
                 });
 
-                console.log(leastUsedAdsAndAllUsersIdComparison);
-
                 //sort the ads by the number of coincidences from the least to the most
                 const sortedAds = leastUsedAdsAndAllUsersIdComparison.sort(
                     (a, b) => a.coincidences.length - b.coincidences.length
                 );
-                console.log(sortedAds);
                 //selectiong the least common ad
                 setSelectedAd(sortedAds[0].ad.ad);
             }

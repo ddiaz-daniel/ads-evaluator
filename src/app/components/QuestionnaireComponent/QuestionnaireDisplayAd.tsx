@@ -38,7 +38,7 @@ const QuestionnaireDisplayAd = ({ setup, images, locale }: DisplayAdProps) => {
                                         className="absolute h-fit w-fit"
                                         style={{
                                             top: `${text.position.y * (320 / 1080)}px`,
-                                            left: `${text.position.x * (300 / 1080)}px`,
+                                            left: `${text.position.x * (200 / 1080)}px`,
                                             fontSize: `${text.fontSize * 0.8}px`,
                                             color: `${text.color}`,
                                             fontFamily: `${text.font}`,

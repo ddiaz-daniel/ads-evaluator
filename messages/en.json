@@ -11,9 +11,9 @@
   },
   "introduction": {
     "title": "Quick Introduction",
-    "first_paragraph": "I'am excited to invite you to participate in my master's thesis research. Your insights are incredibly valuable and will help shape the future of",
-    "thesis": "AI understanding of customers in marketing.",
-    "second_paragraph": "In just 2 minutes, you'll have the opportunity to share your thoughts and experiences through a brief questionnaire. Your responses will be kept strictly confidential and used solely for academic purposes.",
+    "first_paragraph": "Hello! I'm a master student at the University of Applied Sciences Upper Austria, conducting research for my thesis titled: ",
+    "thesis": "Using AI Models for Advertisement Generation: Evaluating the Effects on Visual Perception and Attention.",
+    "second_paragraph": "This short (5mins) study aims to understand how AI-generated ads are perceived by people compared to real ads. Your participation will help me gather valuable insights for my research.",
     "continue": "Continue"
   },
   "demographics": {
@@ -39,7 +39,7 @@
     "itProfessional": "IT Professional",
     "construction": "Construction",
     "plumber": "Plumber",
-    "hobbies": "Select at least 1 hobby you enjoy, or something you are interested in",
+    "hobbies": "Select at least 1 of this hobbies you enjoy doing, or are interested in:",
     "reading": "Reading",
     "hiking": "Hiking",
     "gaming": "Gaming",
@@ -54,12 +54,12 @@
   },
   "questionnaire": {
     "title": "Questionnaire",
-    "first_paragraph": "Now, I'll ask you a few questions about your experience with the ads you just saw.",
-    "second_paragraph": "Please answer honestly and to the best of your ability.",
+    "first_paragraph": "For this last section, I'll ask you a few questions about about the ad your about to see. By tapping on the 'Ad', you will be able to zoom in and see the ad in more detail.",
+    "second_paragraph": "All open questions are optional, so feel free to skip them if you don't want to answer.",
     "start": "Start"
   },
   "questions": {
-    "question1": "How clear is the message of this ad to you?",
+    "question1": "How clear is the message of this ad to you (image & text)?",
     "question2": "How credible and trustworthy does this ad appear to you?",
     "question3": "How visually appealing is this ad?",
     "question4": "Did you find the ad relevant to your interests, lifestyle, or needs?",
@@ -98,6 +98,6 @@
   "thanks": {
     "title": "Thank you!",
     "first_paragraph": "I appreciate your time and insights. Thank you for participating in my research.",
-    "second_paragraph": "Here is a cat for you 🐱"
+    "second_paragraph": "Here is a cat! 🐱"
   }
 }

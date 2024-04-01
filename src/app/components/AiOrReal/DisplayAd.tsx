@@ -15,7 +15,7 @@ const DisplayAd = ({ setup, images, locale }: DisplayAdProps) => {
     <div className="relative w-full max-w-full">
       <div className="relative mx-auto max-w-md">
         <div className="flex place-content-center items-center">
-          <section className="flex h-[630px] w-fit flex-col items-center overflow-x-hidden overflow-y-scroll border-y-8 border-black bg-black pb-4">
+          <section className="flex h-[620px] w-fit flex-col items-center overflow-x-hidden overflow-y-scroll border-y-8 border-black bg-black pb-4">
             <div className="w-42 flex flex-row space-x-4 ">
               <div
                 style={{ width: `${320}px`, height: `${320}px` }}

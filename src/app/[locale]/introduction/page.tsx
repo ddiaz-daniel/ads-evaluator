@@ -10,15 +10,18 @@ export default function Intro() {
       <div className="justtify-center flex w-full max-w-md">
 
         <div className="px-8 pt-28">
-          <h1 className="mb-32 text-center text-2xl font-bold text-white">
+          <h1 className="mb-24 text-center text-2xl font-bold text-white">
             {t('title')}
           </h1>
-          <h2 className="mb-8 flex flex-col space-y-8 text-center text-base text-white">
+          <label className="mb-8 flex flex-col space-y-8 text-center text-base text-white">
             <span>
-              {t('first_paragraph')} <strong>{t('thesis')}</strong>
+              {t('first_paragraph')}
+            </span>
+            <span>
+              <strong>{t('thesis')}</strong>
             </span>
             <span>{t('second_paragraph')}</span>
-          </h2>
+          </label>
         </div>
         <div className="absolute bottom-8 flex w-full max-w-md justify-center">
           <Link

@@ -108,7 +108,7 @@ const AiOrRealComponent = () => {
   }
 
   return (
-    <section className="relative mx-auto h-full min-h-screen max-w-md pt-4">
+    <section className="relative mx-auto h-full min-h-screen max-w-md pt-2">
       {allAds.map((ad, index) => (
         <div key={index}>
           {page === index && (
