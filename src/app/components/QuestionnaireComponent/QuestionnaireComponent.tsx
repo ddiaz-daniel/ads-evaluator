@@ -209,7 +209,7 @@ const QuestionnaireComponent = () => {
 
                     ) : <>
 
-                        <label className={"flex flex-row just px-8 pt-1 font-semibold text-sm text-white justify-between"}>
+                        <label className={`flex flex-row just px-8 pt-1 font-semibold text-sm text-white ${page == 11 ? "justify-evenly" : "justify-between"}`}>
                             <span className="">{t(`option${page + 1}-1`)}</span>
                             <span className=" text-end">{t(`option${page + 1}-2`)}</span>
                         </label>
@@ -226,14 +226,14 @@ const QuestionnaireComponent = () => {
                             <FormControlLabel
                                 value="1"
                                 control={<Radio sx={{ color: '#ffffff' }} />}
-                                label="1"
+                                label={page === 11 ? '' : '1'}
                                 labelPlacement="top"
                                 sx={{ margin: '0 4px 0 4px' }}
                             />
                             <FormControlLabel
                                 value="2"
                                 control={<Radio sx={{ color: '#ffffff' }} />}
-                                label="2"
+                                label={page === 11 ? '' : '2'}
                                 hidden={page === 11}
                                 labelPlacement="top"
                                 sx={{ margin: '0 4px 0 4px' }}
@@ -242,7 +242,7 @@ const QuestionnaireComponent = () => {
                             <FormControlLabel
                                 value="3"
                                 control={<Radio sx={{ color: '#ffffff' }} />}
-                                label="3"
+                                label={page === 11 ? '' : '3'}
                                 hidden={page === 11}
                                 labelPlacement="top"
                                 sx={{ margin: '0 4px 0 4px' }}
@@ -251,7 +251,7 @@ const QuestionnaireComponent = () => {
                             <FormControlLabel
                                 value="4"
                                 control={<Radio sx={{ color: '#ffffff' }} />}
-                                label="4"
+                                label={page === 11 ? '' : '4'}
                                 hidden={page === 11}
                                 labelPlacement="top"
                                 sx={{ margin: '0 4px 0 4px' }}
@@ -260,7 +260,7 @@ const QuestionnaireComponent = () => {
                             <FormControlLabel
                                 value="5"
                                 control={<Radio sx={{ color: '#ffffff' }} />}
-                                label="5"
+                                label={page === 11 ? '' : '5'}
                                 labelPlacement="top"
                                 sx={{ margin: '0 4px 0 4px' }}
 
@@ -269,7 +269,7 @@ const QuestionnaireComponent = () => {
                     </>
                 }
 
-                <div className="absolute bottom-4 flex w-full justify-center">
+                <div className="relative flex w-full justify-center">
                     {page < 11 && (
                         <button
                             type="button"
