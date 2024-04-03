@@ -1,9 +1,10 @@
 import { useQuestionnaire } from '@/app/context/QuestionnaireContext';
 import { useTranslations } from 'next-intl';
 import { useState, useEffect, Suspense } from 'react';
-import { Autocomplete, Box, TextField } from '@mui/material';
+import { Autocomplete, Box, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import { OccupationsInfo } from '@/app/types/types';
 import { generateOccupationsInfo } from '@/app/types/occupations';
+import { list } from 'firebase/storage';
 
 interface OptionProps extends React.HTMLAttributes<HTMLLIElement> {
   key?: string;
@@ -11,13 +12,14 @@ interface OptionProps extends React.HTMLAttributes<HTMLLIElement> {
 
 const OccupationsSection = () => {
   const t = useTranslations('demographics');
-  const { getLanguage, setOccupation } = useQuestionnaire();
+  const { getLanguage, setOccupation, occupation } = useQuestionnaire();
   const [listOfOccupations, setListOfOccupations] = useState<OccupationsInfo[]>(
     []
   );
 
-  const handleOccupationChange = (newValue: OccupationsInfo) => {
-    setOccupation(newValue.code);
+  const handleOccupationChange = (value: string) => {
+    setOccupation(value);
+    console.log(value);
   };
 
   useEffect(() => {
@@ -25,6 +27,8 @@ const OccupationsSection = () => {
       const language = await getLanguage();
       const listOfOccupations = await generateOccupationsInfo(language);
       setListOfOccupations(listOfOccupations);
+      console.log(listOfOccupations);
+      console.log(language);
     };
     getListOfOccupations();
 
@@ -33,42 +37,23 @@ const OccupationsSection = () => {
 
   return (
     <Suspense fallback="Loading...">
-      <Autocomplete
-        id="occupation-select-demo"
-        className="b-0 m-0 w-full rounded p-0"
-        options={listOfOccupations}
-        autoHighlight
-        getOptionLabel={(option) => option.name}
-        onChange={(event, newValue) =>
-          handleOccupationChange(newValue as OccupationsInfo)
-        }
-        renderOption={(props, option) => {
-          const { key, ...rest } = props as OptionProps;
-          return (
-            <Box
-              key={'key-' + option.code}
-              component="li"
-              sx={{ '& > img': { mr: 2, flexShrink: 0 } }}
-              {...rest}
-              value={option.code}
-            >
-              {option.name}
-            </Box>
-          );
-        }}
-        renderInput={(params) => (
-          <TextField
-            className="m-0 mb-1 mt-0 w-full rounded bg-white"
-            {...params}
-            variant="outlined"
-            margin="normal"
-            inputProps={{
-              ...params.inputProps,
-              autoComplete: 'new-password',
-            }}
-          />
-        )}
-      />
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label" className='bg-white'></InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={occupation}
+          sx={{ backgroundColor: 'white' }}
+          onChange={(event) => handleOccupationChange(event.target.value as string)}
+        >
+          {listOfOccupations.map((occupation) => (
+            <MenuItem key={occupation.code} value={occupation.code}>
+              {occupation.name}
+            </MenuItem>
+          ))}
+
+        </Select>
+      </FormControl>
     </Suspense>
   );
 };
