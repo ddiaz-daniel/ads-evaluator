@@ -3,7 +3,6 @@ import {
   addDataToProile,
   getAllGeneratedAds,
   getLocalAds,
-  getProfileById,
 } from '@/app/utils/firebase/functions';
 import { useEffect, useState } from 'react';
 
@@ -12,7 +11,6 @@ import DisplayAd from './DisplayAd';
 import { Ad, AdComponents, RealAd } from '@/app/types/types';
 import DisplayRealAd from './DisplayRealAd';
 import { useRouter } from '@/app/utils/navigation/navigation';
-import { all } from '@tensorflow/tfjs';
 
 type CustomAd = {
   id: string;
