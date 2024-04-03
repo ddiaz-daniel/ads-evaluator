@@ -230,33 +230,37 @@ const QuestionnaireComponent = () => {
                                 labelPlacement="top"
                                 sx={{ margin: '0 4px 0 4px' }}
                             />
-                            <FormControlLabel
-                                value="2"
-                                control={<Radio sx={{ color: '#ffffff' }} />}
-                                label={page === 11 ? '' : '2'}
-                                hidden={page === 11}
-                                labelPlacement="top"
-                                sx={{ margin: '0 4px 0 4px' }}
+                            {page !== 11 &&
+                                <>
+                                    <FormControlLabel
+                                        value="2"
+                                        control={<Radio sx={{ color: '#ffffff' }} />}
+                                        label={page === 11 ? '' : '2'}
+                                        hidden={page === 11}
+                                        labelPlacement="top"
+                                        sx={{ margin: '0 4px 0 4px' }}
 
-                            />
-                            <FormControlLabel
-                                value="3"
-                                control={<Radio sx={{ color: '#ffffff' }} />}
-                                label={page === 11 ? '' : '3'}
-                                hidden={page === 11}
-                                labelPlacement="top"
-                                sx={{ margin: '0 4px 0 4px' }}
+                                    />
+                                    <FormControlLabel
+                                        value="3"
+                                        control={<Radio sx={{ color: '#ffffff' }} />}
+                                        label={page === 11 ? '' : '3'}
+                                        hidden={page === 11}
+                                        labelPlacement="top"
+                                        sx={{ margin: '0 4px 0 4px' }}
 
-                            />
-                            <FormControlLabel
-                                value="4"
-                                control={<Radio sx={{ color: '#ffffff' }} />}
-                                label={page === 11 ? '' : '4'}
-                                hidden={page === 11}
-                                labelPlacement="top"
-                                sx={{ margin: '0 4px 0 4px' }}
+                                    />
+                                    <FormControlLabel
+                                        value="4"
+                                        control={<Radio sx={{ color: '#ffffff' }} />}
+                                        label={page === 11 ? '' : '4'}
+                                        hidden={page === 11}
+                                        labelPlacement="top"
+                                        sx={{ margin: '0 4px 0 4px' }}
 
-                            />
+                                    />
+                                </>
+                            }
                             <FormControlLabel
                                 value="5"
                                 control={<Radio sx={{ color: '#ffffff' }} />}
