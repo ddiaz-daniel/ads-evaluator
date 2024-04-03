@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Head from 'next/head'; // Import Head component from next/head
 import './../globals.css';
 import { QuestionnaireProvider } from '../context/QuestionnaireContext';
 import FirebaseInit from './fireBaseInit';
@@ -16,10 +17,15 @@ export default function RootLayout({
   params: { locale },
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: string; };
 }>) {
   return (
     <html lang={locale}>
+      <Head>
+        {/* Include the viewport meta tag within the Head component */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      </Head>
+
       <FirebaseInit>
         <QuestionnaireProvider>
           <body className={inter.className}>{children}</body>
