@@ -57,7 +57,7 @@
   },
   "questionnaire": {
     "title": "Questionario",
-    "first_paragraph": "Per questa ultima sezione, ti farò alcune domande sull'annuncio che stai per vedere. Cliccando su 'Annuncio', potrai ingrandire e vedere l'annuncio in modo più dettagliato.",
+    "first_paragraph": "Per questa ultima sezione, ti farò alcune domande sull'annuncio che stai per vedere.",
     "second_paragraph": "Tutte le domande aperte sono facoltative, quindi se non desideri rispondere, sentiti libero di saltarle.",
     "start": "Inizia"
   },

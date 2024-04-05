@@ -57,7 +57,7 @@
   },
   "questionnaire": {
     "title": "Fragebogen",
-    "first_paragraph": "In diesem letzten Abschnitt stelle ich Ihnen einige Fragen zur Anzeige, die Sie gleich sehen werden. Durch Tippen auf die 'Anzeige' können Sie hereinzoomen und die Anzeige genauer betrachten.",
+    "first_paragraph": "In diesem letzten Abschnitt stelle ich Ihnen einige Fragen zur Anzeige, die Sie gleich sehen werden.",
     "second_paragraph": "Alle offenen Fragen sind optional, daher können Sie sie gerne überspringen, wenn Sie nicht antworten möchten.",
     "start": "Start"
   },

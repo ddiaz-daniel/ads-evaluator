@@ -109,17 +109,11 @@ const AiOrRealComponent = () => {
   }
 
   return (
-    <section className="relative mx-auto h-full min-h-screen max-w-md pt-2">
+    <section className="relative mx-auto h-dvh max-w-md pt-2 scale-95">
       {allAds.map((ad, index) => (
         <div key={index}>
           {page === index && (
             <>
-              <div className="mb-4 h-full">
-                <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
-                  <span className="text-4xl text-secondary">{page + 1}</span>
-                  <span className="text-2xl">/{allAds.length}</span>
-                </h1>
-              </div>
               {ad.origin == 'ai' && (
                 <DisplayAd setup={ad.setup} images={ad.image} locale={locale} />
               )}
@@ -143,6 +137,10 @@ const AiOrRealComponent = () => {
           >
             {'Real'}
           </button>
+          <h1 className="w-[100px] h-10 justify-center flex bg-white rounded-full text-black items-center self-center">
+            <span className="text-lg">{page + 1}</span>
+            <span className=" text-base">|{allAds.length}</span>
+          </h1>
           <button
             type="button"
             onClick={handleAiClick}

@@ -57,7 +57,7 @@
   },
   "questionnaire": {
     "title": "Questionnaire",
-    "first_paragraph": "For this last section, I'll ask you a few questions about about the ad your about to see. By tapping on the 'Ad', you will be able to zoom in and see the ad in more detail.",
+    "first_paragraph": "For this last section, I'll ask you a few questions about about the ad your about to see.",
     "second_paragraph": "All open questions are optional, so feel free to skip them if you don't want to answer.",
     "start": "Start"
   },

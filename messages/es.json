@@ -57,7 +57,7 @@
   },
   "questionnaire": {
     "title": "Cuestionario",
-    "first_paragraph": "Para esta última sección, te haré algunas preguntas sobre el anuncio que estás a punto de ver. Al hacer clic en 'Anuncio', podrás hacer zoom y ver el anuncio con más detalle.",
+    "first_paragraph": "Para esta última sección, te haré algunas preguntas sobre el anuncio que estás a punto de ver.",
     "second_paragraph": "Todas las preguntas abiertas son opcionales, así que si no deseas responder, siéntete libre de omitirlas.",
     "start": "Comenzar"
   },

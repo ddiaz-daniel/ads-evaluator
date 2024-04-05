@@ -13,10 +13,10 @@ export default function Intro() {
 
   return (
     <section className="relative flex h-screen w-full justify-center bg-primary">
-      <div className="justtify-center flex w-full max-w-md">
+      <div className="justtify-center flex w-full max-w-md h-dvh">
 
-        <div className="w-full px-8 pt-28">
-          <h1 className="mb-32 text-center text-2xl font-bold text-white">
+        <div className="w-full px-8 pt-8">
+          <h1 className="mb-14 text-center text-2xl font-bold text-white">
             {t('title')}
           </h1>
           <h2 className="mb-8 flex flex-col space-y-8 text-center text-base text-white">

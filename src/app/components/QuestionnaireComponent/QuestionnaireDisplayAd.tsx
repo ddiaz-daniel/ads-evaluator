@@ -13,7 +13,7 @@ type DisplayAdProps = {
 const QuestionnaireDisplayAd = ({ setup, images, locale }: DisplayAdProps) => {
     return (
         <div className="relative w-full max-w-full h-[450px] -top-20">
-            <div className="relative mx-auto max-w-md scale-75 hover:scale-100">
+            <div className="relative mx-auto max-w-md scale-75">
                 <div className="flex place-content-center items-center">
                     <section className="flex w-fit flex-col items-center border-y-8 border-black bg-black pb-4 overflow-y-scroll overflow-x-hidden">
                         <div className="w-42 flex flex-row space-x-4 ">

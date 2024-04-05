@@ -50,7 +50,7 @@ const AgeSection: React.FC = () => {
                   textTransform: 'capitalize',
                   flex: 1,
                   flexDirection: 'column',
-                  height: '5rem',
+                  height: '4rem',
                   width: '100%',
                 }}
               >

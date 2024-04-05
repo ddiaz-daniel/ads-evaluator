@@ -58,21 +58,23 @@ const QuestionnaireComponent = () => {
 
     //pageing functions
     const handleNextPage = () => {
-        //save the answer
+        let newAnswers = [...answers]; // Create a copy of the current answers
+
+        // Save the answer
         if (page === 9 || page === 8) {
-            const newAnswer: QuestionnaireAnswer = {
+            newAnswers.push({
                 question: questions[page],
                 answer: textAreaValue,
-            };
-            setAnswers([...answers, newAnswer]);
-        }
-        else {
-            const newAnswer: QuestionnaireAnswer = {
+            });
+        } else {
+            newAnswers.push({
                 question: questions[page],
                 answer: selectedRadioValue,
-            };
-            setAnswers([...answers, newAnswer]);
+            });
         }
+
+        // Update state with the new answers
+        setAnswers(newAnswers);
         setTextAreaValue('');
         setPage(page + 1);
         //due to the re-rendering of the component the radio button value is not updated 
@@ -175,7 +177,7 @@ const QuestionnaireComponent = () => {
 
     if (!selectedAd) {
         return (
-            <div className="flex h-screen w-screen place-content-center items-center">
+            <div className="flex h-dvh w-dvw place-content-center items-center">
                 <CircularProgress />
             </div>
         );
@@ -185,17 +187,8 @@ const QuestionnaireComponent = () => {
         <ThemeProvider theme={theme}>
             <form
                 onSubmit={handleSubmit}
-                className="relative mx-auto h-full min-h-screen max-w-md pt-1"
+                className="relative mx-auto max-w-md pt-1"
             >
-                {page !== 0 && (
-                    <button
-                        type="button"
-                        className="absolute top-6 left-4 text-2xl z-50"
-                        onClick={handleBack}
-                    >
-                        {'<-'}
-                    </button>
-                )}
 
                 <QuestionComponent
                     page={page}
@@ -280,24 +273,36 @@ const QuestionnaireComponent = () => {
                     </>
                 }
 
-                <div className="relative flex w-full justify-center">
+                <div className="relative flex w-full justify-center flex-row space-x-2 px-4">
                     {page < 10 && (
-                        <button
-                            type="button"
-                            onClick={handleNextPage}
-                            className="mx-8 w-full rounded bg-secondary p-3 text-center"
-                        >
-                            {t('continue')}
-                        </button>
+                        <>
+                            <button
+                                type="button"
+                                onClick={handleNextPage}
+                                className="ml-8 mr-4 w-4/5 rounded bg-secondary p-3 text-center"
+                            >
+                                {t('continue')}
+                            </button>
+                            <h1 className="w-1/5 h-10 justify-center flex bg-white rounded-full text-black items-center self-center">
+                                <span className="text-base">{page + 1}</span>
+                                <span className=" text-sm">|11</span>
+                            </h1>
+                        </>
                     )}
                     {page === 10 && (
-                        <button
-                            type="submit"
-                            onClick={handleSubmit}
-                            className="mx-8 w-full rounded bg-secondary p-3 text-center"
-                        >
-                            {t('continue')}
-                        </button>
+                        <>
+                            <button
+                                type="submit"
+                                onClick={handleSubmit}
+                                className="ml-8 mr-4 w-4/5  rounded bg-secondary p-3 text-center"
+                            >
+                                {t('continue')}
+                            </button>
+                            <h1 className="w-1/5 h-10 justify-center flex bg-white rounded-full text-black items-center self-center">
+                                <span className="text-base">{page + 1}</span>
+                                <span className=" text-sm">|11</span>
+                            </h1>
+                        </>
                     )}
                 </div>
             </form >

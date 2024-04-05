@@ -57,7 +57,7 @@
   },
   "questionnaire": {
     "title": "Questionnaire",
-    "first_paragraph": "Pour cette dernière section, je vais vous poser quelques questions sur la publicité que vous êtes sur le point de voir. En cliquant sur 'Publicité', vous pourrez zoomer et voir la publicité en détail.",
+    "first_paragraph": "Pour cette dernière section, je vais vous poser quelques questions sur la publicité que vous êtes sur le point de voir.",
     "second_paragraph": "Toutes les questions ouvertes sont facultatives, donc si vous ne souhaitez pas répondre, n'hésitez pas à les sauter.",
     "start": "Commencer"
   },

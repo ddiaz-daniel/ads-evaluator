@@ -20,7 +20,7 @@ export default function Demographics() {
   return (
     <section className="relative min-h-screen w-full justify-center bg-primary">
 
-      <div className="h-full px-8">
+      <div className="px-8">
         <NextIntlClientProvider messages={messages}>
           <DemographicsForm />
         </NextIntlClientProvider>

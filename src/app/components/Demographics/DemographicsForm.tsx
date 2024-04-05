@@ -120,7 +120,7 @@ const DemographicsForm = () => {
         </button>
       )}
       {page === 0 && (
-        <div className="mb-4">
+        <div className="mb-4 h-dvh ">
           <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
@@ -134,7 +134,7 @@ const DemographicsForm = () => {
       )}
 
       {page === 1 && (
-        <div className="mb-4">
+        <div className="mb-4 h-dvh ">
           <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
@@ -147,7 +147,7 @@ const DemographicsForm = () => {
       )}
 
       {page === 2 && (
-        <div className="mb-4">
+        <div className="mb-4 h-dvh ">
           <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
@@ -160,7 +160,7 @@ const DemographicsForm = () => {
       )}
 
       {page === 3 && (
-        <div className="">
+        <div className="h-dvh ">
           <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
@@ -173,7 +173,7 @@ const DemographicsForm = () => {
       )}
 
       {page === 4 && (
-        <div className="h-full">
+        <div className="h-full ">
           <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
@@ -188,7 +188,7 @@ const DemographicsForm = () => {
       )}
 
       {page === 5 && (
-        <div className="h-full">
+        <div className="h-dvh">
           <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
@@ -196,9 +196,9 @@ const DemographicsForm = () => {
           <label htmlFor="insta" className="mb-1 block pb-8 text-2xl">
             {t('instagramUser')}
           </label>
-          <div className="pb-28">
-            <InstagramUserSection />
-          </div>
+
+          <InstagramUserSection />
+
         </div>
       )}
 

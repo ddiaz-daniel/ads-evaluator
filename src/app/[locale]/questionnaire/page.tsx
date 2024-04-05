@@ -20,7 +20,7 @@ export default function Questionnaire() {
     <section className="min-w-screen relative min-h-screen w-full justify-center bg-primary">
 
 
-      <div className="h-full w-full">
+      <div className="h-dvh w-full">
         <React.StrictMode>
           <NextIntlClientProvider messages={messages}>
             <QuestionnaireComponent />

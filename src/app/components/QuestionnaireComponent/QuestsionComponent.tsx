@@ -19,11 +19,8 @@ const QuestionComponent = ({
     const locale = localStorage.getItem('language') || 'en';
 
     return (
-        <div className="mb-4 h-full px-4">
-            <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end flex items-end">
-                <span className="text-4xl text-secondary">{pageNumber + 1}</span>
-                <span className="text-2xl">/11</span>
-            </h1>
+        <div className="my-4 h-full px-4">
+
             <QuestionnaireDisplayAd
                 setup={selectedAd.setup.ads[0].data}
                 images={selectedAd.images[0]}
