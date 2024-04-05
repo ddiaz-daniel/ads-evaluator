@@ -29,7 +29,7 @@ export default function RootLayout({
       <Analytics />
       <FirebaseInit>
         <QuestionnaireProvider>
-          <body className={`${inter.className} h-dvh`}>{children}</body>
+          <body className={inter.className}>{children}</body>
         </QuestionnaireProvider>
       </FirebaseInit>
     </html>
