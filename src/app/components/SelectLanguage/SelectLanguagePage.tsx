@@ -1,10 +1,9 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import Image from 'next/image';
 import { usePathname, useRouter } from '@/app/utils/navigation/navigation';
-import { useQuestionnaire } from '@/app/context/QuestionnaireContext';
-import { getLocale } from 'next-intl/server';
+
 
 type SelectLanguagePageProps = {
   intl: {
@@ -24,7 +23,6 @@ const SelectLanguagePage: FC<SelectLanguagePageProps> = ({ intl }) => {
   const handleChange = async (lang: string) => {
     if (router) {
       localStorage.setItem('language', lang);
-
       await router.replace(pathname, { locale: lang });
     }
   };
@@ -35,6 +33,16 @@ const SelectLanguagePage: FC<SelectLanguagePageProps> = ({ intl }) => {
     'flex h-20 w-32 place-self-center self-center rounded object-cover object-center';
   const textStyle = 'text-center text-white pt-2';
 
+  useEffect(() => {
+
+    const initLangSetup = async () => {
+      const currentLocale = await localStorage.getItem('´language');
+      if (!currentLocale) {
+        localStorage.setItem('language', "en");
+      }
+    };
+    initLangSetup();
+  }, []);
   return (
     <div className="grid grid-cols-2 place-content-center">
       <button onClick={() => handleChange('en')} className={buttonStyle}>

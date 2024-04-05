@@ -1,13 +1,18 @@
 import AiOrRealComponent from '@/app/components/AiOrReal/AiOrRealComponent';
 import SwitchLanguage from '@/app/components/UI/LanguageSelector';
+import { Metadata } from 'next';
 import {
   NextIntlClientProvider,
   useMessages,
   useTranslations,
 } from 'next-intl';
 
-export default function Demographics() {
-  const t = useTranslations('demographics');
+export const metadata: Metadata = {
+  title: 'Ai or Real?',
+  description: 'Using AI Models for Advertisement Generation: Evaluating the Effects on Visual Perception and Attention.',
+};
+
+export default function AiReal() {
   const messages = useMessages();
 
   return (

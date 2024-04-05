@@ -14,9 +14,9 @@ export default function Index() {
     portuguese: t('portuguese'),
   };
   return (
-    <section className="relative h-screen w-full justify-center overflow-hidden bg-primary">
+    <section className="relative h-svh w-full justify-center overflow-hidden bg-primary">
       <div className="relative mx-auto flex h-screen max-w-xl flex-col justify-center">
-        <div className="mt-28 h-full px-8">
+        <div className="mt-14 h-full px-8">
           <h1 className="mb-24 text-center text-2xl font-bold text-white">
             {t('question')}
           </h1>

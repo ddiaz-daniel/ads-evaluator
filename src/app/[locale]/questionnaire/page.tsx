@@ -1,12 +1,16 @@
-import AiOrRealComponent from '@/app/components/AiOrReal/AiOrRealComponent';
 import QuestionnaireComponent from '@/app/components/QuestionnaireComponent/QuestionnaireComponent';
-import SwitchLanguage from '@/app/components/UI/LanguageSelector';
+import { Metadata } from 'next';
 import {
   NextIntlClientProvider,
   useMessages,
   useTranslations,
 } from 'next-intl';
 import React from 'react';
+
+export const metadata: Metadata = {
+  title: 'Questionnaire',
+  description: 'Using AI Models for Advertisement Generation: Evaluating the Effects on Visual Perception and Attention.',
+};
 
 export default function Questionnaire() {
   const t = useTranslations('questionnaire');

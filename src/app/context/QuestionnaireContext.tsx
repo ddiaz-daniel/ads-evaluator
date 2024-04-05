@@ -5,7 +5,6 @@ import React, {
   useEffect,
   ReactNode,
   useContext,
-  use,
 } from 'react';
 
 interface QuestionnaireData {
@@ -29,6 +28,8 @@ type ContextProps = {
   setHobbies: (hobbies: string[]) => void;
   id: string;
   setId: (id: string) => void;
+  isInstagramUser: boolean;
+  setIsInstagramUser: (isInstagramUser: boolean) => void;
 };
 
 const QuestionnaireContext = createContext<ContextProps | undefined>(undefined);
@@ -57,6 +58,7 @@ const QuestionnaireProvider = ({ children }: Props) => {
   const [occupation, setOccupation] = useState<string>('');
   const [hobbies, setHobbies] = useState<string[]>([]);
   const [id, setId] = useState<string>('');
+  const [isInstagramUser, setIsInstagramUser] = useState<boolean>(false);
 
   const changeLanguage = (language: string) => {
     //save in lcoal storage
@@ -105,6 +107,8 @@ const QuestionnaireProvider = ({ children }: Props) => {
     setHobbies,
     id,
     setId,
+    isInstagramUser,
+    setIsInstagramUser,
   };
 
   return (

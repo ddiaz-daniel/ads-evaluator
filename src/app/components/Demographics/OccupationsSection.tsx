@@ -19,7 +19,6 @@ const OccupationsSection = () => {
 
   const handleOccupationChange = (value: string) => {
     setOccupation(value);
-    console.log(value);
   };
 
   useEffect(() => {
@@ -27,8 +26,6 @@ const OccupationsSection = () => {
       const language = await getLanguage();
       const listOfOccupations = await generateOccupationsInfo(language);
       setListOfOccupations(listOfOccupations);
-      console.log(listOfOccupations);
-      console.log(language);
     };
     getListOfOccupations();
 

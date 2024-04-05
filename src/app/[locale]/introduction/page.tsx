@@ -1,15 +1,20 @@
-import SwitchLanguage from '@/app/components/UI/LanguageSelector';
+import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Introduction',
+  description: 'Using AI Models for Advertisement Generation: Evaluating the Effects on Visual Perception and Attention.',
+};
 
 export default function Intro() {
   const t = useTranslations('introduction');
 
   return (
-    <section className="relative flex h-screen w-full justify-center bg-primary">
+    <section className="relative flex h-lvh w-full justify-center bg-primary">
       <div className="justtify-center flex w-full max-w-md">
 
-        <div className="px-8 pt-28">
+        <div className="px-8 pt-14">
           <h1 className="mb-24 text-center text-2xl font-bold text-white">
             {t('title')}
           </h1>

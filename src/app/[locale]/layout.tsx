@@ -4,6 +4,8 @@ import Head from 'next/head'; // Import Head component from next/head
 import './../globals.css';
 import { QuestionnaireProvider } from '../context/QuestionnaireContext';
 import FirebaseInit from './fireBaseInit';
+import { Analytics } from "@vercel/analytics/react";
+
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,10 +24,9 @@ export default function RootLayout({
   return (
     <html lang={locale}>
       <Head>
-        {/* Include the viewport meta tag within the Head component */}
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       </Head>
-
+      <Analytics />
       <FirebaseInit>
         <QuestionnaireProvider>
           <body className={inter.className}>{children}</body>

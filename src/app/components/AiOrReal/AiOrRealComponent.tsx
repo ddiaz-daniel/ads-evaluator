@@ -67,14 +67,17 @@ const AiOrRealComponent = () => {
       setAiAds(ads);
 
       const realAds: RealAd[] = await getLocalAds();
-      const locale = (await localStorage.getItem('language')) as
-        | 'en'
-        | 'fr'
-        | 'de'
-        | 'es'
-        | 'pt'
-        | 'it';
-      setLocale(locale);
+      const locale = (await localStorage.getItem('language') as "en" | "de" | "it" | "es" | "pt" | "fr");
+
+      //locale validation, otherwise, english:
+      if (!locale) {
+        const validLocale = "en";
+        localStorage.setItem('language', validLocale);
+        setLocale(validLocale);
+      }
+      else {
+        setLocale(locale);
+      }
       setRealAds(realAds);
     };
     getAds();

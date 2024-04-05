@@ -14,10 +14,11 @@ import {
   getProfileById,
 } from '@/app/utils/firebase/functions';
 import { useRouter } from '@/app/utils/navigation/navigation';
+import InstagramUserSection from './InstagramUserSection';
 
 const DemographicsForm = () => {
   const [page, setPage] = useState(0);
-  const { ageRange, gender, country, occupation, hobbies, id, setId } =
+  const { ageRange, gender, country, occupation, hobbies, isInstagramUser, id, setId } =
     useQuestionnaire();
   const t = useTranslations('demographics');
   const route = useRouter();
@@ -31,6 +32,7 @@ const DemographicsForm = () => {
       country,
       occupation,
       hobbies,
+      isInstagramUser,
     };
     await createNewProfile(id, profile).then(() => {
       route.push('/get-started');
@@ -67,6 +69,28 @@ const DemographicsForm = () => {
     setId(newId);
   };
 
+  const disableValidation = (page: number) => {
+    if (page === 0) {
+      return;
+    }
+    if (page === 1 && ageRange === '') {
+      return true;
+    }
+    if (page === 2 && (country === '')) {
+      return true;
+    }
+    if (page === 3 && occupation === '') {
+      return true;
+    }
+    if (page === 4 && hobbies.length === 0) {
+      return true;
+    }
+    if (page === 5 && isInstagramUser === null) {
+      return true;
+    }
+    return false;
+  };
+
   useEffect(() => {
     if (!checkIdValidity()) {
       createId();
@@ -84,7 +108,7 @@ const DemographicsForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative mx-auto h-full min-h-screen max-w-md pt-2"
+      className="relative mx-auto h-full min-h-screen max-w-md pt-2 "
     >
       {page !== 0 && (
         <button
@@ -96,10 +120,10 @@ const DemographicsForm = () => {
         </button>
       )}
       {page === 0 && (
-        <div className="mb-4 h-full">
+        <div className="mb-4">
           <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
-            <span className="text-4xl text-secondary">{page}</span>
-            <span className="text-2xl">/5</span>
+            <span className="text-4xl text-secondary">{page + 1}</span>
+            <span className="text-2xl">/6</span>
           </h1>
           <label htmlFor="gender" className="mb-1 block pb-8 text-2xl">
             {t('gender')}
@@ -112,8 +136,8 @@ const DemographicsForm = () => {
       {page === 1 && (
         <div className="mb-4">
           <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
-            <span className="text-4xl text-secondary">{page}</span>
-            <span className="text-2xl">/5</span>
+            <span className="text-4xl text-secondary">{page + 1}</span>
+            <span className="text-2xl">/6</span>
           </h1>
           <label htmlFor="age" className="mb-1 block pb-8 text-2xl">
             {t('age')}
@@ -125,8 +149,8 @@ const DemographicsForm = () => {
       {page === 2 && (
         <div className="mb-4">
           <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
-            <span className="text-4xl text-secondary">{page}</span>
-            <span className="text-2xl">/5</span>
+            <span className="text-4xl text-secondary">{page + 1}</span>
+            <span className="text-2xl">/6</span>
           </h1>
           <label htmlFor="country" className="mb-1 block pb-8 text-2xl">
             {t('country')}
@@ -138,8 +162,8 @@ const DemographicsForm = () => {
       {page === 3 && (
         <div className="">
           <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
-            <span className="text-4xl text-secondary">{page}</span>
-            <span className="text-2xl">/5</span>
+            <span className="text-4xl text-secondary">{page + 1}</span>
+            <span className="text-2xl">/6</span>
           </h1>
           <label htmlFor="occupation" className="mb-1 block pb-8 text-2xl">
             {t('occupation')}
@@ -152,7 +176,7 @@ const DemographicsForm = () => {
         <div className="h-full">
           <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
-            <span className="text-2xl">/5</span>
+            <span className="text-2xl">/6</span>
           </h1>
           <label htmlFor="hobbies" className="mb-1 block pb-8 text-2xl">
             {t('hobbies')}
@@ -163,22 +187,38 @@ const DemographicsForm = () => {
         </div>
       )}
 
+      {page === 5 && (
+        <div className="h-full">
+          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+            <span className="text-4xl text-secondary">{page + 1}</span>
+            <span className="text-2xl">/6</span>
+          </h1>
+          <label htmlFor="insta" className="mb-1 block pb-8 text-2xl">
+            {t('instagramUser')}
+          </label>
+          <div className="pb-28">
+            <InstagramUserSection />
+          </div>
+        </div>
+      )}
+
       <div className="absolute bottom-8 flex w-full justify-center">
-        {page < 4 && (
+        {page < 5 && (
           <button
+            disabled={disableValidation(page)}
             type="button"
             onClick={handleNextPage}
-            className="mx-8 w-full rounded bg-secondary p-3 text-center"
+            className="mx-8 w-full rounded bg-secondary p-3 text-center disabled:bg-slate-500 disabled:opacity-50"
           >
             {t('continue')}
           </button>
         )}
-        {page === 4 && (
+        {page === 5 && (
           <button
-            disabled={hobbies.length === 0}
+
             type="submit"
             onClick={handleSubmit}
-            className="mx-8 w-full rounded bg-secondary p-3 text-center disabled:bg-slate-500 disabled:opacity-50"
+            className="mx-8 w-full rounded bg-secondary p-3 text-center "
           >
             {t('continue')}
           </button>

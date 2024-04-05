@@ -49,7 +49,6 @@ const QuestionnaireComponent = () => {
         t('question9'),
         t('question10'),
         t('question11'),
-        t('question12'),
     ];
 
     //Radio buttons functions
@@ -60,7 +59,7 @@ const QuestionnaireComponent = () => {
     //pageing functions
     const handleNextPage = () => {
         //save the answer
-        if (page === 9 || page === 10) {
+        if (page === 9 || page === 8) {
             const newAnswer: QuestionnaireAnswer = {
                 question: questions[page],
                 answer: textAreaValue,
@@ -75,14 +74,22 @@ const QuestionnaireComponent = () => {
             setAnswers([...answers, newAnswer]);
         }
         setTextAreaValue('');
-        setSelectedRadioValue('3');
         setPage(page + 1);
+        //due to the re-rendering of the component the radio button value is not updated 
+        //on time so the page needs to be set as 9 to be displayed on 10
+        setSelectedRadioValue(page === 9 ? '1' : '3');
+        progressiveAnswerUploading();
     };
 
     const handleBack = () => {
         if (page > 0) {
             setPage(page - 1);
         }
+    };
+
+    const progressiveAnswerUploading = async () => {
+        const id = localStorage.getItem('questionnaire-id') as string;
+        await addDataToProile(id, { questionnaireAnswers: answers });
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -197,7 +204,7 @@ const QuestionnaireComponent = () => {
                     selectedAd={selectedAd}
                 />
                 {
-                    (page === 9 || page === 10) ? (
+                    (page === 8 || page === 9) ? (
                         <div className='w-full px-8'>
                             <textarea
                                 className="w-full p-2 bg-white text-black"
@@ -209,7 +216,7 @@ const QuestionnaireComponent = () => {
 
                     ) : <>
 
-                        <label className={`flex flex-row just px-8 pt-1 font-semibold text-sm text-white ${page == 11 ? "justify-evenly" : "justify-between"}`}>
+                        <label className={`flex flex-row just px-8 pt-1 font-semibold text-sm text-white ${page == 10 ? "justify-evenly" : "justify-between"}`}>
                             <span className="">{t(`option${page + 1}-1`)}</span>
                             <span className=" text-end">{t(`option${page + 1}-2`)}</span>
                         </label>
@@ -226,17 +233,17 @@ const QuestionnaireComponent = () => {
                             <FormControlLabel
                                 value="1"
                                 control={<Radio sx={{ color: '#ffffff' }} />}
-                                label={page === 11 ? '' : '1'}
+                                label={page === 10 ? '' : '1'}
                                 labelPlacement="top"
                                 sx={{ margin: '0 4px 0 4px' }}
                             />
-                            {page !== 11 &&
+                            {page !== 10 &&
                                 <>
                                     <FormControlLabel
                                         value="2"
                                         control={<Radio sx={{ color: '#ffffff' }} />}
-                                        label={page === 11 ? '' : '2'}
-                                        hidden={page === 11}
+                                        label={page === 10 ? '' : '2'}
+                                        hidden={page === 10}
                                         labelPlacement="top"
                                         sx={{ margin: '0 4px 0 4px' }}
 
@@ -244,8 +251,8 @@ const QuestionnaireComponent = () => {
                                     <FormControlLabel
                                         value="3"
                                         control={<Radio sx={{ color: '#ffffff' }} />}
-                                        label={page === 11 ? '' : '3'}
-                                        hidden={page === 11}
+                                        label={page === 10 ? '' : '3'}
+                                        hidden={page === 10}
                                         labelPlacement="top"
                                         sx={{ margin: '0 4px 0 4px' }}
 
@@ -253,8 +260,8 @@ const QuestionnaireComponent = () => {
                                     <FormControlLabel
                                         value="4"
                                         control={<Radio sx={{ color: '#ffffff' }} />}
-                                        label={page === 11 ? '' : '4'}
-                                        hidden={page === 11}
+                                        label={page === 10 ? '' : '4'}
+                                        hidden={page === 10}
                                         labelPlacement="top"
                                         sx={{ margin: '0 4px 0 4px' }}
 
@@ -264,7 +271,7 @@ const QuestionnaireComponent = () => {
                             <FormControlLabel
                                 value="5"
                                 control={<Radio sx={{ color: '#ffffff' }} />}
-                                label={page === 11 ? '' : '5'}
+                                label={page === 10 ? '' : '5'}
                                 labelPlacement="top"
                                 sx={{ margin: '0 4px 0 4px' }}
 
@@ -274,7 +281,7 @@ const QuestionnaireComponent = () => {
                 }
 
                 <div className="relative flex w-full justify-center">
-                    {page < 11 && (
+                    {page < 10 && (
                         <button
                             type="button"
                             onClick={handleNextPage}
@@ -283,7 +290,7 @@ const QuestionnaireComponent = () => {
                             {t('continue')}
                         </button>
                     )}
-                    {page === 11 && (
+                    {page === 10 && (
                         <button
                             type="submit"
                             onClick={handleSubmit}

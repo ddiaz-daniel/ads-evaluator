@@ -3,6 +3,12 @@ import {
 } from 'next-intl';
 import React from 'react';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Thanks',
+  description: 'Using AI Models for Advertisement Generation: Evaluating the Effects on Visual Perception and Attention.',
+};
 
 export default function Thanks() {
   const t = useTranslations('thanks');
