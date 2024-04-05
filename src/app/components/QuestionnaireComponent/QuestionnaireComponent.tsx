@@ -103,9 +103,13 @@ const QuestionnaireComponent = () => {
             localStorage.removeItem('questionnaire-id');
             router.push('/thanks');
         });
-
-
     };
+
+    const addSelectedAdIdToUser = async (adId: string) => {
+        const id = localStorage.getItem('questionnaire-id') as string;
+        await addDataToProile(id, { adRelatedId: adId });
+    };
+
 
     useEffect(() => {
         //get users data
@@ -170,6 +174,7 @@ const QuestionnaireComponent = () => {
                 );
                 //selectiong the least common ad
                 setSelectedAd(sortedAds[0].ad.ad);
+                addSelectedAdIdToUser(sortedAds[0].ad.id);
             }
         };
         getAllUsersData();
