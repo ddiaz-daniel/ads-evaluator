@@ -108,7 +108,7 @@ const DemographicsForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative mx-auto h-full max-h-dvh max-w-md pt-2 "
+      className="relative mx-auto max-w-md "
     >
       {page !== 0 && (
         <button
@@ -120,8 +120,8 @@ const DemographicsForm = () => {
         </button>
       )}
       {page === 0 && (
-        <div className="mb-4 h-dvh ">
-          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+        <div className=" h-dvh ">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
           </h1>
@@ -134,8 +134,8 @@ const DemographicsForm = () => {
       )}
 
       {page === 1 && (
-        <div className="mb-4 h-dvh ">
-          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+        <div className=" h-dvh ">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
           </h1>
@@ -147,8 +147,8 @@ const DemographicsForm = () => {
       )}
 
       {page === 2 && (
-        <div className="mb-4 h-dvh ">
-          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+        <div className="h-dvh ">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
           </h1>
@@ -161,7 +161,7 @@ const DemographicsForm = () => {
 
       {page === 3 && (
         <div className="h-dvh ">
-          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
           </h1>
@@ -173,8 +173,8 @@ const DemographicsForm = () => {
       )}
 
       {page === 4 && (
-        <div className="h-full ">
-          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+        <div className="">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
           </h1>
@@ -188,8 +188,8 @@ const DemographicsForm = () => {
       )}
 
       {page === 5 && (
-        <div className="h-dvh">
-          <h1 className="my-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+        <div className="h-dvh ">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl">/6</span>
           </h1>
