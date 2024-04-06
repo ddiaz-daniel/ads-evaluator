@@ -14,7 +14,7 @@ export default function Thanks() {
   const t = useTranslations('thanks');
 
   return (
-    <section className="relative flex h-screen w-full justify-center bg-primary overflow-y-hidden">
+    <section className="relative flex h-dvh w-full justify-center bg-primary overflow-y-hidden">
       <div className="justtify-center flex w-full max-w-md">
 
         <div className="px-8 pt-28">

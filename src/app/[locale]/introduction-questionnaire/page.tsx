@@ -12,7 +12,7 @@ export default function Intro() {
   const t = useTranslations('questionnaire');
 
   return (
-    <section className="relative flex h-screen w-full justify-center bg-primary">
+    <section className="relative flex h-dvh w-full justify-center bg-primary">
       <div className="justtify-center flex w-full max-w-md h-dvh">
 
         <div className="w-full px-8 pt-8">

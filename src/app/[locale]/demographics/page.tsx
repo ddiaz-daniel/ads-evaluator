@@ -18,7 +18,7 @@ export default function Demographics() {
   const messages = useMessages();
 
   return (
-    <section className="relative min-h-screen w-full justify-center bg-primary">
+    <section className="relative h-dvh w-full justify-center bg-primary">
 
       <div className="px-8">
         <NextIntlClientProvider messages={messages}>

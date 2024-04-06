@@ -108,7 +108,7 @@ const DemographicsForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative mx-auto h-full min-h-screen max-w-md pt-2 "
+      className="relative mx-auto h-full max-h-dvh max-w-md pt-2 "
     >
       {page !== 0 && (
         <button

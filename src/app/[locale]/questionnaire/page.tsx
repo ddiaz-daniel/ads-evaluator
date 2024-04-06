@@ -17,7 +17,7 @@ export default function Questionnaire() {
   const messages = useMessages();
 
   return (
-    <section className="min-w-screen relative min-h-screen w-full justify-center bg-primary">
+    <section className="min-w-screen relative min-h-dvh w-full justify-center bg-primary">
 
 
       <div className="h-dvh w-full">
