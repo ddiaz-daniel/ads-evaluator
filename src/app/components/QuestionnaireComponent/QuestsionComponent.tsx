@@ -27,7 +27,7 @@ const QuestionComponent = ({
                 locale={locale as "en" | "es" | "fr" | "de" | "it" | "pt"}
             />
 
-            <label htmlFor={`question${page}`} className="mb-1 block text-wrap text-justify px-4">
+            <label htmlFor={`question${page}`} className="mb-1 block text-wrap text-justify px-4 text-white">
                 {question}
             </label>
         </div>

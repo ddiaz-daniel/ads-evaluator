@@ -244,7 +244,7 @@ const QuestionnaireComponent = () => {
 
                     ) : <>
 
-                        <label className={`flex flex-row just px-8 pt-1 font-semibold text-sm text-white ${page == 10 ? "justify-evenly px-28" : "justify-between"}`}>
+                        <label className={`flex flex-row just px-8 pt-1 font-semibold text-sm dark:text-white text-white ${page == 10 ? "justify-evenly px-28" : "justify-between"}`}>
                             <span className="">{t(`option${page + 1}-1`)}</span>
                             <span className=" text-end">{t(`option${page + 1}-2`)}</span>
                         </label>
