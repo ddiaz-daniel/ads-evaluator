@@ -220,7 +220,7 @@ const QuestionnaireComponent = () => {
         }, 5000);
 
         return () => clearTimeout(loadingTimeout);
-    }, []);
+    }, [isLoading]);
 
 
     if (!selectedAd) {
