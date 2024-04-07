@@ -254,7 +254,7 @@ const QuestionnaireComponent = () => {
                             aria-labelledby="demo-form-control-label-placement"
                             name="position"
                             defaultValue="top"
-                            sx={{ justifyContent: 'center' }}
+                            sx={{ justifyContent: 'center', color: '#ffffff' }}
                             onChange={handleRadioChange}
                             value={selectedRadioValue}
                         >

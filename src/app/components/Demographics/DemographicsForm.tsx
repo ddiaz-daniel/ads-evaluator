@@ -121,9 +121,9 @@ const DemographicsForm = () => {
       )}
       {page === 0 && (
         <div className=" h-dvh ">
-          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end text-white">
             <span className="text-4xl text-secondary">{page + 1}</span>
-            <span className="text-2xl">/6</span>
+            <span className="text-2xl text-white">/6</span>
           </h1>
           <label htmlFor="gender" className="mb-1 block pb-8 text-2xl">
             {t('gender')}
@@ -135,9 +135,9 @@ const DemographicsForm = () => {
 
       {page === 1 && (
         <div className=" h-dvh ">
-          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end text-white">
             <span className="text-4xl text-secondary">{page + 1}</span>
-            <span className="text-2xl">/6</span>
+            <span className="text-2xl text-white">/6</span>
           </h1>
           <label htmlFor="age" className="mb-1 block pb-8 text-2xl">
             {t('age')}
@@ -148,9 +148,9 @@ const DemographicsForm = () => {
 
       {page === 2 && (
         <div className="h-dvh ">
-          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end text-white">
             <span className="text-4xl text-secondary">{page + 1}</span>
-            <span className="text-2xl">/6</span>
+            <span className="text-2xl text-white">/6</span>
           </h1>
           <label htmlFor="country" className="mb-1 block pb-8 text-2xl">
             {t('country')}
@@ -161,9 +161,9 @@ const DemographicsForm = () => {
 
       {page === 3 && (
         <div className="h-dvh ">
-          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end text-white">
             <span className="text-4xl text-secondary">{page + 1}</span>
-            <span className="text-2xl">/6</span>
+            <span className="text-2xl text-white">/6</span>
           </h1>
           <label htmlFor="occupation" className="mb-1 block pb-8 text-2xl">
             {t('occupation')}
@@ -174,9 +174,9 @@ const DemographicsForm = () => {
 
       {page === 4 && (
         <div className="">
-          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end text-white">
             <span className="text-4xl text-secondary">{page + 1}</span>
-            <span className="text-2xl">/6</span>
+            <span className="text-2xl text-white">/6</span>
           </h1>
           <label htmlFor="hobbies" className="mb-1 block pb-8 text-2xl">
             {t('hobbies')}
@@ -189,9 +189,9 @@ const DemographicsForm = () => {
 
       {page === 5 && (
         <div className="h-dvh ">
-          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end">
+          <h1 className="mb-4 pt-4 w-full border-b-2 border-dashed border-white/50 pb-4 text-4xl justify-end px-4 flex items-end text-white">
             <span className="text-4xl text-secondary">{page + 1}</span>
-            <span className="text-2xl">/6</span>
+            <span className="text-2xl text-white">/6</span>
           </h1>
           <label htmlFor="insta" className="mb-1 block pb-8 text-2xl">
             {t('instagramUser')}
