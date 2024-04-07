@@ -44,7 +44,7 @@ export type QuestionnaireData = {
   country: string;
   occupation: string;
   hobbies: string[];
-  isInstagramUser: boolean;
+  isInstagramUser: boolean | null;
 };
 
 export type Project = {
