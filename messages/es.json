@@ -62,7 +62,7 @@
     "start": "Comenzar"
   },
   "questions": {
-    "question1": "¿Qué tan clara es para ti la mensaje de este anuncio (imagen y texto)?",
+    "question1": "¿Qué tan clara es para ti el mensaje de este anuncio (imagen y texto)?",
     "question2": "¿Qué tan creíble y confiable te parece este anuncio?",
     "question3": "¿Qué tan atractivo visualmente es este anuncio?",
     "question4": "¿Encontraste el anuncio relevante para tus intereses, estilo de vida o necesidades?",
