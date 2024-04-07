@@ -15,7 +15,7 @@ export default function Thanks() {
 
   return (
     <section className="relative flex h-dvh w-full justify-center bg-primary overflow-y-hidden">
-      <div className="justtify-center flex w-full max-w-md">
+      <div className="justify-center flex w-full max-w-md">
 
         <div className="px-8 pt-28">
           <h1 className="mb-32 text-center text-2xl font-bold text-white">

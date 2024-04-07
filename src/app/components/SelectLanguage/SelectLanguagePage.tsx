@@ -36,7 +36,7 @@ const SelectLanguagePage: FC<SelectLanguagePageProps> = ({ intl }) => {
   useEffect(() => {
 
     const initLangSetup = async () => {
-      const currentLocale = await localStorage.getItem('´language');
+      const currentLocale = await localStorage.getItem('language');
       if (!currentLocale) {
         localStorage.setItem('language', "en");
       }
