@@ -28,8 +28,8 @@ type ContextProps = {
   setHobbies: (hobbies: string[]) => void;
   id: string;
   setId: (id: string) => void;
-  isInstagramUser: boolean;
-  setIsInstagramUser: (isInstagramUser: boolean) => void;
+  isInstagramUser: boolean | null;
+  setIsInstagramUser: (isInstagramUser: boolean | null) => void;
 };
 
 const QuestionnaireContext = createContext<ContextProps | undefined>(undefined);
@@ -58,7 +58,7 @@ const QuestionnaireProvider = ({ children }: Props) => {
   const [occupation, setOccupation] = useState<string>('');
   const [hobbies, setHobbies] = useState<string[]>([]);
   const [id, setId] = useState<string>('');
-  const [isInstagramUser, setIsInstagramUser] = useState<boolean>(false);
+  const [isInstagramUser, setIsInstagramUser] = useState<boolean | null>(null);
 
   const changeLanguage = (language: string) => {
     //save in lcoal storage
