@@ -70,8 +70,8 @@ const DemographicsForm = () => {
   };
 
   const disableValidation = (page: number) => {
-    if (page === 0) {
-      return;
+    if (page === 0 && gender === '') {
+      return true;
     }
     if (page === 1 && ageRange === '') {
       return true;

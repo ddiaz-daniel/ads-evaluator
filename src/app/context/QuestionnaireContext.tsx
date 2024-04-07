@@ -52,8 +52,8 @@ const QuestionnaireProvider = ({ children }: Props) => {
   const [questionnaireData, setQuestionnaireData] = useState<
     QuestionnaireData[]
   >([]);
-  const [ageRange, setAgeRange] = useState<string>('0-18');
-  const [gender, setGender] = useState<string>('male');
+  const [ageRange, setAgeRange] = useState<string>('');
+  const [gender, setGender] = useState<string>('');
   const [country, setCountry] = useState<string>('');
   const [occupation, setOccupation] = useState<string>('');
   const [hobbies, setHobbies] = useState<string[]>([]);
