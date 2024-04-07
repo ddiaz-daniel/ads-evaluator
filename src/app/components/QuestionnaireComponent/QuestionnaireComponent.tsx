@@ -26,6 +26,9 @@ const QuestionnaireComponent = () => {
     const [selectedAd, setSelectedAd] = useState<Ad | null>(null);
     const [selectedRadioValue, setSelectedRadioValue] = useState('3');
     const [textAreaValue, setTextAreaValue] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+
+
     const t = useTranslations('questions');
     const router = useRouter();
 
@@ -203,7 +206,25 @@ const QuestionnaireComponent = () => {
         getAllUsersData();
     }, []);
 
+    useEffect(() => {
+        const loadingTimeout = setTimeout(() => {
+            setIsLoading(false);
+            localStorage.clear();
+            caches.keys().then(cacheNames => {
+                cacheNames.forEach(cacheName => {
+                    caches.delete(cacheName); // Clear all caches
+                });
+            });
+            router.push('/');
+
+        }, 5000);
+
+        return () => clearTimeout(loadingTimeout);
+    }, []);
+
+
     if (!selectedAd) {
+        setIsLoading(true);
         return (
             <div className="flex h-dvh w-dvw place-content-center items-center">
                 <CircularProgress />
@@ -212,12 +233,16 @@ const QuestionnaireComponent = () => {
     }
 
     if (page > 10) {
+        setIsLoading(true);
         return (
             <div className="flex h-dvh w-dvw place-content-center items-center">
                 <CircularProgress />
             </div>
         );
     }
+
+
+
 
     return (
         <ThemeProvider theme={theme}>
