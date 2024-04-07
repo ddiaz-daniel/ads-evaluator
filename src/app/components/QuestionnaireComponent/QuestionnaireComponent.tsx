@@ -57,36 +57,43 @@ const QuestionnaireComponent = () => {
     };
 
     //pageing functions
-    const handleNextPage = () => {
-        let newAnswers = [...answers]; // Create a copy of the current answers
+    const handleNextPage = async () => {
+        // Create a copy of the current answers
+        let newAnswers = [...answers];
 
-        // Save the answer
+        // Create an object to hold the question-answer pair for the current page
+        let pageAnswer: QuestionnaireAnswer;
+
+        // Determine the answer based on the page number
         if (page === 9 || page === 8) {
-            newAnswers.push({
+            pageAnswer = {
                 question: questions[page],
                 answer: textAreaValue,
-            });
+            };
         } else {
-            newAnswers.push({
+            pageAnswer = {
                 question: questions[page],
                 answer: selectedRadioValue,
-            });
+            };
         }
+
+        // Store the answer for the current page at the corresponding index in newAnswers
+        newAnswers[page] = pageAnswer;
 
         // Update state with the new answers
         setAnswers(newAnswers);
         setTextAreaValue('');
-        setPage(page + 1);
-        //due to the re-rendering of the component the radio button value is not updated 
-        //on time so the page needs to be set as 9 to be displayed on 10
+        // Increment the page number
+        if (page < 11) {
+            setPage(page + 1);
+        }
+
+
+        // Due to the re-rendering of the component, the radio button value is not updated 
+        // on time so the page needs to be set as 9 to be displayed on 10
         setSelectedRadioValue(page === 9 ? '1' : '3');
         progressiveAnswerUploading();
-    };
 
-    const handleBack = () => {
-        if (page > 0) {
-            setPage(page - 1);
-        }
     };
 
     const progressiveAnswerUploading = async () => {
@@ -94,22 +101,37 @@ const QuestionnaireComponent = () => {
         await addDataToProile(id, { questionnaireAnswers: answers });
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const addingSelectedAdInfoToUser = async (ad: TargetedAds) => {
+        const id = localStorage.getItem('questionnaire-id') as string;
+        //adding id
+        await addDataToProile(id, { adRelatedId: ad.id });
+        //adding persona name
+        await addDataToProile(id, { adRelatedPerson: ad.ad.persona.name });
+    };
+
+    const addingInterestsToUser = async (interest: string) => {
+        const id = localStorage.getItem('questionnaire-id') as string;
+        await addDataToProile(id, { relatedInterest: interest });
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        const id = localStorage.getItem('questionnaire-id') as string;
-        await addDataToProile(id, { questionnaireAnswers: answers }).then(() => {
-            //delete the questionnaire id from the local storage
-            localStorage.removeItem('questionnaire-id');
-            router.push('/thanks');
-        });
+        handleNextPage();
     };
 
-    const addSelectedAdIdToUser = async (adId: string) => {
-        const id = localStorage.getItem('questionnaire-id') as string;
-        await addDataToProile(id, { adRelatedId: adId });
-    };
-
+    useEffect(() => {
+        if (page === questions.length) {
+            const addAnswersToProfile = async () => {
+                const id = localStorage.getItem('questionnaire-id') as string;
+                await addDataToProile(id, { questionnaireAnswers: answers }).then(() => {
+                    //delete the questionnaire id from the local storage
+                    localStorage.removeItem('questionnaire-id');
+                    router.push('/thanks');
+                });
+            };
+            addAnswersToProfile();
+        }
+    }, [page]);
 
     useEffect(() => {
         //get users data
@@ -174,7 +196,8 @@ const QuestionnaireComponent = () => {
                 );
                 //selectiong the least common ad
                 setSelectedAd(sortedAds[0].ad.ad);
-                addSelectedAdIdToUser(sortedAds[0].ad.id);
+                addingSelectedAdInfoToUser(sortedAds[0].ad);
+                addingInterestsToUser(interestsNames[lessCoincidences[0].interest]);
             }
         };
         getAllUsersData();
@@ -188,10 +211,17 @@ const QuestionnaireComponent = () => {
         );
     }
 
+    if (page > 10) {
+        return (
+            <div className="flex h-dvh w-dvw place-content-center items-center">
+                <CircularProgress />
+            </div>
+        );
+    }
+
     return (
         <ThemeProvider theme={theme}>
             <form
-                onSubmit={handleSubmit}
                 className="relative mx-auto max-w-md pt-1"
             >
 
@@ -297,8 +327,8 @@ const QuestionnaireComponent = () => {
                     {page === 10 && (
                         <>
                             <button
-                                type="submit"
-                                onClick={handleSubmit}
+                                type="button"
+                                onClick={handleNextPage}
                                 className="ml-8 mr-4 w-4/5  rounded bg-secondary p-3 text-center"
                             >
                                 {t('continue')}

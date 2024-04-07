@@ -35,7 +35,7 @@ const QuestionnaireDisplayAd = ({ setup, images, locale }: DisplayAdProps) => {
                                 {setup.text.map((text, text_index) => (
                                     <p
                                         key={text_index}
-                                        className="absolute h-fit w-fit"
+                                        className="absolute h-fit w-[320px]"
                                         style={{
                                             top: `${text.position.y * (320 / 1080)}px`,
                                             left: `${text.position.x * (200 / 1080)}px`,
@@ -54,7 +54,7 @@ const QuestionnaireDisplayAd = ({ setup, images, locale }: DisplayAdProps) => {
                                                 .padStart(2, '0')}`,
                                             opacity: 1,
                                             zIndex: 20,
-                                            width: `${text.width ? text.width : 320}px`,
+                                            width: `${text.width && text.width < 320 ? text.width : 320}px`,
                                         }}
                                     >
                                         {text.content[locale]}
