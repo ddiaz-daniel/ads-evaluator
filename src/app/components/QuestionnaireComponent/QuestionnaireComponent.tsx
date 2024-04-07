@@ -201,6 +201,10 @@ const QuestionnaireComponent = () => {
                 addingSelectedAdInfoToUser(sortedAds[0].ad);
                 addingInterestsToUser(interestsNames[lessCoincidences[0].interest]);
             }
+            else {
+                localStorage.removeItem('questionnaire-id');
+                router.push('/');
+            }
         };
         getAllUsersData();
     }, []);
