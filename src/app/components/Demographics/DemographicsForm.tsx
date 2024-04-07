@@ -125,7 +125,7 @@ const DemographicsForm = () => {
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl text-white">/6</span>
           </h1>
-          <label htmlFor="gender" className="mb-1 block pb-8 text-2xl">
+          <label htmlFor="gender" className="mb-1 block pb-8 text-2xl text-white">
             {t('gender')}
           </label>
 
@@ -139,7 +139,7 @@ const DemographicsForm = () => {
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl text-white">/6</span>
           </h1>
-          <label htmlFor="age" className="mb-1 block pb-8 text-2xl">
+          <label htmlFor="age" className="mb-1 block pb-8 text-2xl text-white">
             {t('age')}
           </label>
           <AgeSection />
@@ -152,7 +152,7 @@ const DemographicsForm = () => {
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl text-white">/6</span>
           </h1>
-          <label htmlFor="country" className="mb-1 block pb-8 text-2xl">
+          <label htmlFor="country" className="mb-1 block pb-8 text-2xl text-white">
             {t('country')}
           </label>
           <CountriesSection />
@@ -165,7 +165,7 @@ const DemographicsForm = () => {
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl text-white">/6</span>
           </h1>
-          <label htmlFor="occupation" className="mb-1 block pb-8 text-2xl">
+          <label htmlFor="occupation" className="mb-1 block pb-8 text-2xl text-white">
             {t('occupation')}
           </label>
           <OccupationsSection />
@@ -178,7 +178,7 @@ const DemographicsForm = () => {
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl text-white">/6</span>
           </h1>
-          <label htmlFor="hobbies" className="mb-1 block pb-8 text-2xl">
+          <label htmlFor="hobbies" className="mb-1 block pb-8 text-2xl text-white">
             {t('hobbies')}
           </label>
           <div className="pb-28">
@@ -193,7 +193,7 @@ const DemographicsForm = () => {
             <span className="text-4xl text-secondary">{page + 1}</span>
             <span className="text-2xl text-white">/6</span>
           </h1>
-          <label htmlFor="insta" className="mb-1 block pb-8 text-2xl">
+          <label htmlFor="insta" className="mb-1 block pb-8 text-2xl text-white">
             {t('instagramUser')}
           </label>
 
