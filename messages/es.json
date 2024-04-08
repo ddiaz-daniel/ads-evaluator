@@ -51,7 +51,7 @@
   },
   "get_started": {
     "title": "Empezar",
-    "first_paragraph": "En esta sección, verás una serie de anuncios de Instagram. Tu tarea es simple: decidir si cada anuncio fue generado por IA o es un anuncio real creado y publicado por una empresa.",
+    "first_paragraph": "En esta sección, verás una serie de anuncios de Instagram. Tu tarea es simple: decidir si cada anuncio fue generado por IA (Inteligencia Artificial) o es un anuncio real creado y publicado por una empresa.",
     "second_paragraph": "Ten en cuenta que se han eliminado todos los nombres de marca de los anuncios y se ha estandarizado el formato.",
     "start": "Comenzar"
   },
@@ -72,7 +72,7 @@
     "question8": "¿Cómo calificarías la calidad general del anuncio?",
     "question9": "¿Qué elemento específico del anuncio influyó en tu decisión de interactuar o no con él? (opcional)",
     "question10": "¿Este anuncio evocó alguna respuesta emocional en ti? (por ejemplo, felicidad, emoción, confianza) (opcional)",
-    "question11": "¿Crees que fue un anuncio generado por IA?",
+    "question11": "¿Crees que fue un anuncio generado por IA (Inteligencia Artificial)?",
     "option1-1": "No claro",
     "option1-2": "Muy claro",
     "option2-1": "Poco creíble",
