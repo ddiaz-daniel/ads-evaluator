@@ -52,7 +52,7 @@ const AiOrRealComponent = () => {
     if (allAds.length === 0) return;
     if (page === allAds.length) {
       const addAnswersToProfile = async () => {
-        const id = localStorage.getItem('questionnaire-id') as string;
+        const id = sessionStorage.getItem('questionnaire-id') as string;
         await addDataToProile(id, { aiOrReal: answers }).then(() => {
           router.push('/introduction-questionnaire');
         });
@@ -67,12 +67,12 @@ const AiOrRealComponent = () => {
       setAiAds(ads);
 
       const realAds: RealAd[] = await getLocalAds();
-      const locale = (await localStorage.getItem('language') as "en" | "de" | "it" | "es" | "pt" | "fr");
+      const locale = (await sessionStorage.getItem('language') as "en" | "de" | "it" | "es" | "pt" | "fr");
 
       //locale validation, otherwise, english:
       if (!locale) {
         const validLocale = "en";
-        localStorage.setItem('language', validLocale);
+        sessionStorage.setItem('language', validLocale);
         setLocale(validLocale);
       }
       else {
@@ -109,7 +109,7 @@ const AiOrRealComponent = () => {
   }
 
   return (
-    <section className="relative mx-auto h-dvh max-w-md pt-2 scale-95">
+    <section className="relative mx-auto min-h-dvh max-w-md pt-2 scale-95 h-full">
       {allAds.map((ad, index) => (
         <div key={index}>
           {page === index && (

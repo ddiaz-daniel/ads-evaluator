@@ -22,7 +22,7 @@ const SelectLanguagePage: FC<SelectLanguagePageProps> = ({ intl }) => {
 
   const handleChange = async (lang: string) => {
     if (router) {
-      localStorage.setItem('language', lang);
+      sessionStorage.setItem('language', lang);
       await router.replace(pathname, { locale: lang });
     }
   };
@@ -36,9 +36,9 @@ const SelectLanguagePage: FC<SelectLanguagePageProps> = ({ intl }) => {
   useEffect(() => {
 
     const initLangSetup = async () => {
-      const currentLocale = await localStorage.getItem('language');
+      const currentLocale = await sessionStorage.getItem('language');
       if (!currentLocale) {
-        localStorage.setItem('language', "en");
+        sessionStorage.setItem('language', "en");
       }
     };
     initLangSetup();

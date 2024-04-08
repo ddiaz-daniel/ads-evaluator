@@ -10,11 +10,13 @@ import { useQuestionnaire } from '@/app/context/QuestionnaireContext';
 import { v1 as uuidv1 } from 'uuid';
 import { QuestionnaireData } from '@/app/types/types';
 import {
+  addDataToProile,
   createNewProfile,
   getProfileById,
 } from '@/app/utils/firebase/functions';
 import { useRouter } from '@/app/utils/navigation/navigation';
 import InstagramUserSection from './InstagramUserSection';
+import { CgNametag } from 'react-icons/cg';
 
 const DemographicsForm = () => {
   const [page, setPage] = useState(0);
@@ -25,16 +27,8 @@ const DemographicsForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const profile: QuestionnaireData = {
-      id,
-      ageRange,
-      gender,
-      country,
-      occupation,
-      hobbies,
-      isInstagramUser,
-    };
-    await createNewProfile(id, profile).then(() => {
+
+    await addDataToProile(id, { isInstagramUser: isInstagramUser }).then(() => {
       route.push('/get-started');
     });
   };
@@ -45,12 +39,36 @@ const DemographicsForm = () => {
     }
   };
 
-  const handleNextPage = () => {
+  const handleNextPage = async () => {
+
+    if (page === 0 && ageRange !== '') {
+      await addDataProgressively("gender", gender);
+      await addDataProgressively("id", id);
+    }
+    if (page === 1 && ageRange !== '') {
+      await addDataProgressively("ageRange", ageRange);
+    }
+    if (page === 2 && country !== '') {
+      await addDataProgressively("country", country);
+    }
+    if (page === 3 && occupation !== '') {
+      await addDataProgressively("occupation", occupation);
+    }
+    if (page === 4 && hobbies.length !== 0) {
+      await addDataProgressively("hobbies", hobbies);
+    }
+    if (page === 5 && isInstagramUser !== null) {
+      await addDataProgressively("isInstagramUser", isInstagramUser);
+    }
     setPage(page + 1);
   };
 
+  const addDataProgressively = async (field: string, value: string | string[] | boolean) => {
+    await addDataToProile(id, { [field]: value });
+  };
+
   const checkIdValidity = () => {
-    const id = localStorage.getItem('questionnaire-id');
+    const id = sessionStorage.getItem('questionnaire-id');
     if (!id) {
       return false;
     }
@@ -65,7 +83,7 @@ const DemographicsForm = () => {
 
   const createId = () => {
     const newId = uuidv1();
-    localStorage.setItem('questionnaire-id', newId);
+    sessionStorage.setItem('questionnaire-id', newId);
     setId(newId);
   };
 
@@ -95,7 +113,7 @@ const DemographicsForm = () => {
     if (!checkIdValidity()) {
       createId();
     } else {
-      const oldId = localStorage.getItem('questionnaire-id');
+      const oldId = sessionStorage.getItem('questionnaire-id');
       if (oldId === null) {
         createId();
         return;

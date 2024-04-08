@@ -16,7 +16,7 @@ const QuestionComponent = ({
     selectedAd,
 }: QuestionComponentProps) => {
 
-    const locale = localStorage.getItem('language') || 'en';
+    const locale = sessionStorage.getItem('language') || 'en';
 
     return (
         <div className="my-4 h-full px-4">

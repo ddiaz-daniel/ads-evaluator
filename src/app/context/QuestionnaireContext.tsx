@@ -62,17 +62,17 @@ const QuestionnaireProvider = ({ children }: Props) => {
 
   const changeLanguage = (language: string) => {
     //save in lcoal storage
-    localStorage.setItem('language', language);
+    sessionStorage.setItem('language', language);
   };
 
   const getLanguage = () => {
-    if (localStorage) return localStorage.getItem('language') || 'en';
+    if (sessionStorage) return sessionStorage.getItem('language') || 'en';
     else return 'en';
   };
 
   useEffect(() => {
     const savedData = JSON.parse(
-      localStorage.getItem('questionnaireData') || '[]'
+      sessionStorage.getItem('questionnaireData') || '[]'
     );
     if (savedData) {
       setQuestionnaireData(savedData);
@@ -80,7 +80,7 @@ const QuestionnaireProvider = ({ children }: Props) => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(
+    sessionStorage.setItem(
       'questionnaireData',
       JSON.stringify(questionnaireData)
     );

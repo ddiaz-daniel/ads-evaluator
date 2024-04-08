@@ -18,6 +18,7 @@ import {
     createTheme,
 } from '@mui/material';
 import { useRouter } from '@/app/utils/navigation/navigation';
+import { all } from '@tensorflow/tfjs';
 
 
 const QuestionnaireComponent = () => {
@@ -99,12 +100,12 @@ const QuestionnaireComponent = () => {
     };
 
     const progressiveAnswerUploading = async () => {
-        const id = localStorage.getItem('questionnaire-id') as string;
+        const id = sessionStorage.getItem('questionnaire-id') as string;
         await addDataToProile(id, { questionnaireAnswers: answers });
     };
 
     const addingSelectedAdInfoToUser = async (ad: TargetedAds) => {
-        const id = localStorage.getItem('questionnaire-id') as string;
+        const id = sessionStorage.getItem('questionnaire-id') as string;
         //adding id
         await addDataToProile(id, { adRelatedId: ad.id });
         //adding persona name
@@ -112,7 +113,7 @@ const QuestionnaireComponent = () => {
     };
 
     const addingInterestsToUser = async (interest: string) => {
-        const id = localStorage.getItem('questionnaire-id') as string;
+        const id = sessionStorage.getItem('questionnaire-id') as string;
         await addDataToProile(id, { relatedInterest: interest });
     };
 
@@ -124,10 +125,9 @@ const QuestionnaireComponent = () => {
     useEffect(() => {
         if (page === questions.length) {
             const addAnswersToProfile = async () => {
-                const id = localStorage.getItem('questionnaire-id') as string;
+                const id = sessionStorage.getItem('questionnaire-id') as string;
                 await addDataToProile(id, { questionnaireAnswers: answers }).then(() => {
                     //delete the questionnaire id from the local storage
-                    localStorage.removeItem('questionnaire-id');
                     router.push('/thanks');
                 });
             };
@@ -140,16 +140,16 @@ const QuestionnaireComponent = () => {
         const getAllUsersData = async () => {
             const response = await getAllUsers();
             const allUsers = await response;
-            const userId = localStorage.getItem('questionnaire-id');
+            const userId = await sessionStorage.getItem('questionnaire-id');
 
             if (userId) {
                 const currentUser = allUsers.find((user) => user.id === userId);
                 //check relation between user interests and ads
+                console.log(allUsers);
                 const interestRelatedAds: TargetedAds[] =
                     await getAllGeneratedAdsFilteredByInterests(
                         currentUser?.hobbies || []
                     );
-
                 //compare the current user interests with the interest of all the other users
                 // Count coincidences for each interest among all users
                 const currentUserInterests = new Set(currentUser?.hobbies);
@@ -159,7 +159,7 @@ const QuestionnaireComponent = () => {
                         interest,
                         quantity: 0,
                     }));
-
+                console.log(interestCoincidences);
                 allUsers.forEach((user) => {
                     currentUser?.hobbies.forEach((interest) => {
                         if (user.relatedInterest === interest) {
@@ -197,12 +197,12 @@ const QuestionnaireComponent = () => {
                     (a, b) => a.coincidences.length - b.coincidences.length
                 );
                 //selectiong the least common ad
+                console.log(sortedAds[0]);
                 setSelectedAd(sortedAds[0].ad.ad);
                 addingSelectedAdInfoToUser(sortedAds[0].ad);
                 addingInterestsToUser(interestsNames[lessCoincidences[0].interest]);
             }
             else {
-                localStorage.removeItem('questionnaire-id');
                 router.push('/');
             }
         };
