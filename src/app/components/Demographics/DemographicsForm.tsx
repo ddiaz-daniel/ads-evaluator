@@ -215,10 +215,10 @@ const DemographicsForm = () => {
         )}
         {page === 5 && (
           <button
-
+            disabled={disableValidation(page)}
             type="submit"
             onClick={handleSubmit}
-            className="mx-8 w-full rounded bg-secondary p-3 text-center "
+            className="mx-8 w-full rounded bg-secondary p-3 text-center disabled:bg-slate-500 disabled:opacity-50"
           >
             {t('continue')}
           </button>
