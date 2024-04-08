@@ -41,9 +41,10 @@ const DemographicsForm = () => {
 
   const handleNextPage = async () => {
 
-    if (page === 0 && ageRange !== '') {
-      await addDataProgressively("gender", gender);
-      await addDataProgressively("id", id);
+    if (page === 0 && gender !== '') {
+      await addDataProgressively("gender", gender).then(async () => {
+        await addDataProgressively("id", id);
+      });
     }
     if (page === 1 && ageRange !== '') {
       await addDataProgressively("ageRange", ageRange);
