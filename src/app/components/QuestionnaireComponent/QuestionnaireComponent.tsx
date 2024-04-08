@@ -18,7 +18,6 @@ import {
     createTheme,
 } from '@mui/material';
 import { useRouter } from '@/app/utils/navigation/navigation';
-import { all } from '@tensorflow/tfjs';
 
 
 const QuestionnaireComponent = () => {
