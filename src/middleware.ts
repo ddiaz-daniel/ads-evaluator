@@ -18,7 +18,8 @@ export default async function middleware(request: NextRequest) {
     !(request.nextUrl.pathname.includes('/get-started') || request.nextUrl.pathname.includes('/introduction') ||
       request.nextUrl.pathname.includes('/introduction-questionnaire') || request.nextUrl.pathname.includes('/questionnaire') ||
       request.nextUrl.pathname.includes('/ai-or-real') || request.nextUrl.pathname.includes('/thanks') ||
-      request.nextUrl.pathname.includes('/demographics') || request.nextUrl.pathname.includes('/select-language'))
+      request.nextUrl.pathname.includes('/demographics') || request.nextUrl.pathname.includes('/select-language') ||
+      request.nextUrl.pathname.includes('/results'))
   ) {
     console.log('Redirecting to select-language');
     return NextResponse.redirect(`${request.nextUrl.origin}/${defaultLocale}/select-language`, { status: 302 });
