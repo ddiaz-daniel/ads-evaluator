@@ -98,7 +98,6 @@ const Sidebar: React.FC<SidebarProps> = ({ allUsers, filteredUsers, setFilteredU
                             variant={filterOptions.country.includes(country) ? "contained" : "outlined"}
                             onClick={() => {
                                 if (filterOptions.country) {
-                                    console.log(filterOptions.country);
                                     if (Array.isArray(filterOptions.country)) {
                                         const updatedCountry = filterOptions.country.includes(country)
                                             ? filterOptions.country.filter(selectedCountry => selectedCountry !== country)

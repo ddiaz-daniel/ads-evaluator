@@ -148,7 +148,6 @@ const QuestionnaireComponent = () => {
                     await getAllGeneratedAdsFilteredByInterests(
                         currentUser?.hobbies || []
                     );
-                console.log(currentUser);
                 //compare the current user interests with the interest of all the other users
                 // Count coincidences for each interest among all users
                 const currentUserInterests = new Set(currentUser?.hobbies);
@@ -158,7 +157,6 @@ const QuestionnaireComponent = () => {
                         interest,
                         quantity: 0,
                     }));
-                console.log(interestCoincidences);
                 allUsers.forEach((user) => {
                     currentUser?.hobbies.forEach((interest) => {
                         if (user.relatedInterest === interest) {
@@ -196,7 +194,6 @@ const QuestionnaireComponent = () => {
                     (a, b) => a.coincidences.length - b.coincidences.length
                 );
                 //selectiong the least common ad
-                console.log(sortedAds);
                 setSelectedAd(sortedAds[0].ad.ad);
                 addingSelectedAdInfoToUser(sortedAds[0].ad);
                 addingInterestsToUser(interestsNames[lessCoincidences[0].interest]);
