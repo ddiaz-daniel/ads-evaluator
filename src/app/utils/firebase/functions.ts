@@ -40,7 +40,7 @@ export const getAllUsers = async () => {
 
 export const addDataToProile = async (
   documentId: string,
-  data: { [key: string]: any }
+  data: { [key: string]: any; }
 ) => {
   const documentRef = doc(firestore, 'profiles', documentId);
 
@@ -116,6 +116,16 @@ export const getAllGeneratedAdsFilteredByInterests = async (
   );
 
   return filteredAds as TargetedAds[];
+};
+
+export const getGeneratedAdById = async (id: string) => {
+  const projects = await getAllCompoundAds();
+  const project = projects.find((project) => project.id === id);
+  if (project) {
+    return project.ads;
+  } else {
+    return null;
+  }
 };
 
 export const interestsNames: Record<string, string> = {

@@ -235,6 +235,8 @@ export type User = {
   adRelatedId: string;
   relatedInterest: string;
   relatedPersona: string;
+  adRelatedPerson: string;
+  isInstagramUser: boolean;
 };
 
 export type TargetedAds = {

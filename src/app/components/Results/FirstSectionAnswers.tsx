@@ -69,7 +69,7 @@ const FirstSectionAnswers: React.FC<{ filteredUsers: User[]; }> = ({ filteredUse
 
     return (
         <Paper elevation={3} style={{ padding: 20, marginBottom: 20 }}>
-            <Typography variant="h5" gutterBottom>Filtered Users Table</Typography>
+            <Typography variant="h5" gutterBottom>Second part - Real or AI set of questions</Typography>
             {renderFilteredUsersTable()}
         </Paper>
     );

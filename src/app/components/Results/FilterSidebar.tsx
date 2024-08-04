@@ -91,9 +91,9 @@ const Sidebar: React.FC<SidebarProps> = ({ allUsers, filteredUsers, setFilteredU
             <FormGroup sx={{ my: 1 }}>
                 <Typography variant="body1">Country</Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                    {uniqueCountries.map(country => (
+                    {uniqueCountries.map((country, index) => (
                         <Button
-                            key={country}
+                            key={country + index}
                             className={filterOptions.country.includes(country) ? `bg-secondary` : "bg-gray-100 border-gray-200 text-gray-800"}
                             variant={filterOptions.country.includes(country) ? "contained" : "outlined"}
                             onClick={() => {
