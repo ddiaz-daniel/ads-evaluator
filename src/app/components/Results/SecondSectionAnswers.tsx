@@ -307,7 +307,7 @@ const SecondSectionAnswers: React.FC<{ filteredUsers: User[]; }> = ({ filteredUs
                     <InputLabel>Ad ID</InputLabel>
                     <Select
                         value={filterAdId}
-                        onChange={handleFilterChange}
+                        onChange={() => handleFilterChange}
                         label="Ad ID"
                         name="adId"
                     >
@@ -325,7 +325,7 @@ const SecondSectionAnswers: React.FC<{ filteredUsers: User[]; }> = ({ filteredUs
                     <InputLabel>Persona</InputLabel>
                     <Select
                         value={filterPersona}
-                        onChange={handleFilterChange}
+                        onChange={() => handleFilterChange}
                         label="Persona"
                         name="persona"
                     >
@@ -343,7 +343,7 @@ const SecondSectionAnswers: React.FC<{ filteredUsers: User[]; }> = ({ filteredUs
                     <InputLabel>Interest</InputLabel>
                     <Select
                         value={filterInterest}
-                        onChange={handleFilterChange}
+                        onChange={() => handleFilterChange}
                         label="Interest"
                         name="interest"
                     >
