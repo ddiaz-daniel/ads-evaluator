@@ -48,10 +48,6 @@ const ResultsPage = () => {
                     countAiOrReal++;
                 }
             });
-            console.log("Questionnaires answered", count);
-            console.log("Ai or Real answered", countAiOrReal);
-            //total
-            console.log("Total users", data.length);
 
             //now how many users have answer the 9 and 10th optional questions
             let countOptional9 = 0;
@@ -67,8 +63,6 @@ const ResultsPage = () => {
                     }
                 }
             });
-            console.log("Optional 9 answered", countOptional9);
-            console.log("Optional 10 answered", countOptional10);
 
             //print if the user have ever user instagram for peple over 31 and around 19 and 30
             let countInstagram = 0;
@@ -87,9 +81,6 @@ const ResultsPage = () => {
                     }
                 }
             });
-            console.log("Instagram users", countInstagram);
-            console.log("Instagram users 19-30", countInstagram19);
-            console.log("Instagram users 31-50", countInstagram31);
 
 
             /*const response = await getAllUsers();

@@ -20,6 +20,31 @@ const Overview: React.FC<OverviewProps> = ({ users }) => {
     const genderColors = ['#004B95', '#38812F', '#005F60', '#C46100', '#F0AB00'];
     const ageRangeColors = ['#A30000', '#EF9234', '#F6D173', '#06C', '#7CC674'];
 
+    const categories: { [key: string]: string; } = {
+        technologyGaming: "Technology and Gaming",
+        readingLearning: "Reading and Learning",
+        natureOutdoors: "Nature and Outdoors",
+        travel: "Travel",
+        socializingRelationships: "Socializing and Relationships",
+        petsAnimalCare: "Pets and Animal Care",
+        carsAutomobiles: "Cars and Automobiles",
+        historyArchaeology: "History and Archaeology",
+        foodCooking: "Food and Cooking",
+        fashionStyle: "Fashion and Style",
+        sportsFitness: "Sports and Fitness",
+        philosophySpirituality: "Philosophy and Spirituality",
+        musicEntertainment: "Music and Entertainment",
+        artsCreativity: "Arts and Creativity",
+        scienceDiscovery: "Science and Discovery",
+        healthWellness: "Health and Wellness",
+        volunteeringActivism: "Volunteering and Activism",
+        financeInvesting: "Finance and Investing",
+        diyCrafts: "DIY and Crafts",
+        undefined: "undefined",
+    };
+
+
+
     useEffect(() => {
         // Calculate total number of users
         setTotalUsers(users.length);
@@ -54,10 +79,12 @@ const Overview: React.FC<OverviewProps> = ({ users }) => {
             hobbyCounts[hobby] = (hobbyCounts[hobby] || 0) + 1;
         });
         const hobbiesChartData = Object.keys(hobbyCounts).map(hobby => ({
-            hobby,
+            hobby: categories[hobby],
             count: hobbyCounts[hobby],
         }));
-        setHobbiesData(hobbiesChartData);
+        //filter the undefined hobbies
+        const hobbies = hobbiesChartData.filter(hobby => hobby.hobby !== "undefined" && hobby.hobby !== "");
+        setHobbiesData(hobbies);
 
         // Calculate gender distribution
         const genderCounts: { [key: string]: number; } = {};
@@ -75,11 +102,14 @@ const Overview: React.FC<OverviewProps> = ({ users }) => {
         users.forEach(user => {
             occupationCounts[user.occupation] = (occupationCounts[user.occupation] || 0) + 1;
         });
+        //capitalize the first letter of the occupation. If it is "it" it will be "IT"
         const occupationChartData = Object.keys(occupationCounts).map(occupation => ({
-            occupation,
+            occupation: occupation === "it" ? "IT" : occupation.charAt(0).toUpperCase() + occupation.slice(1),
             count: occupationCounts[occupation],
         }));
-        setOccupationData(occupationChartData);
+        //filter the undefined occupation
+        const occupation = occupationChartData.filter(occupation => occupation.occupation !== "undefined" && occupation.occupation !== "");
+        setOccupationData(occupation);
     }, [users]);
 
     return (
@@ -163,7 +193,7 @@ const Overview: React.FC<OverviewProps> = ({ users }) => {
 
             <Paper elevation={3} style={{ padding: 20, marginBottom: 20 }}>
                 <Typography variant="h5" gutterBottom>Occupation Distribution</Typography>
-                <ResponsiveContainer width="100%" height={300}>
+                <ResponsiveContainer width="100%" height={400}>
                     <BarChart data={occupationData} margin={{ top: 15, right: 30, left: 20, bottom: 60 }}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="occupation" angle={-45} textAnchor="end" />
@@ -178,7 +208,7 @@ const Overview: React.FC<OverviewProps> = ({ users }) => {
             <Paper elevation={3} style={{ padding: 20, marginBottom: 20 }}>
                 <Typography variant="h5" gutterBottom>Hobbies Distribution</Typography>
                 <ResponsiveContainer width="100%" height={500}>
-                    <BarChart data={hobbiesData} margin={{ top: 15, right: 30, left: 20, bottom: 95 }}>
+                    <BarChart data={hobbiesData} margin={{ top: 15, right: 30, left: 40, bottom: 140 }}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="hobby" angle={-45} textAnchor="end">
                         </XAxis>

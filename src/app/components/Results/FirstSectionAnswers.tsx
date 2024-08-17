@@ -35,7 +35,7 @@ const FirstSectionAnswers: React.FC<{ filteredUsers: User[]; }> = ({ filteredUse
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>Ad Image</TableCell>
+                        <TableCell>Image</TableCell>
                         <TableCell>Answer</TableCell>
                         <TableCell>Real (%)</TableCell>
                         <TableCell>AI (%)</TableCell>
@@ -53,12 +53,12 @@ const FirstSectionAnswers: React.FC<{ filteredUsers: User[]; }> = ({ filteredUse
                             <TableCell className={(id.startsWith('100') && (counts.real / (counts.real + counts.ai) > 0.5)) ?
                                 " text-green-500" : (!id.startsWith('100') && (counts.ai / (counts.real + counts.ai) < 0.5)) ?
                                     "text-red-500" : "text-black"}>
-                                {(counts.real / (counts.real + counts.ai) * 100).toFixed(2)}
+                                {(counts.real)}
                             </TableCell>
                             <TableCell className={(!id.startsWith('100') && (counts.ai / (counts.real + counts.ai) > 0.5)) ?
                                 "text-green-500" : (id.startsWith('100') && (counts.real / (counts.real + counts.ai) < 0.5)) ?
                                     "text-red-500" : "text-black"}
-                            >{(counts.ai / (counts.real + counts.ai) * 100).toFixed(2)}
+                            >{(counts.ai)}
                             </TableCell>
                         </TableRow>
                     ))}
