@@ -89,6 +89,7 @@ export const getAllGeneratedAdsFilteredByInterests = async (
     'UyheWjGKOi3HdwZfOX4P',
     'w3x16twFh1mwb3rIEhjB',
     'JCfAhKUJGlLUAHze9ECo',
+    'a66BZYoEvXT5C2b6BxCc'
   ];
   //filter projects by id only projects in the list of ids
   const filteredProjectsByDate = projects.filter((project) =>

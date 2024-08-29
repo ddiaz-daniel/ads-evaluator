@@ -80,7 +80,6 @@ const SecondSectionAnswers: React.FC<{ filteredUsers: User[]; }> = ({ filteredUs
                     acc[id] = images;
                 return acc;
             }, {} as { [key: string]: AdImage[]; });
-            console.log(imageMap);
             setAdImages(imageMap);
         };
 
@@ -212,7 +211,6 @@ const SecondSectionAnswers: React.FC<{ filteredUsers: User[]; }> = ({ filteredUs
 
     const renderCompleteDataTable = (data: User[]) => {
         const quantitativeAnalysis = getQuantitativeAnalysis(data);
-        console.log(quantitativeAnalysis);
         return (
             <Table>
                 <TableHead>
